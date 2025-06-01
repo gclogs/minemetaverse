@@ -2,6 +2,7 @@
 *
 
 # Except for these files/folders
+!README.md
 !world
 !plugins/
 !plugins/**
@@ -10,6 +11,7 @@
 !start.bat
 !.gitignore
 !server.properties
+!.windsurfrules
 
 # banned
 !banned-players.json
@@ -18,12 +20,8 @@
 # staffs
 !ops.json
 
-## 무시할 특정 플러그인 파일/폴더
+# 무시할 특정 플러그인 파일/폴더
 plugins/.paper-remapped
-
-# Ignore plugins/Skript directory but keep scripts folder
-plugins/Skript/
-!plugins/Skript/scripts/
 
 ## 유료 플러그인들은 알아서 구매하세요.
 plugins/ItemsAdder_4.0.10-hotfix-1.jar
@@ -39,7 +37,6 @@ plugins/MythicLib/
 
 ## 기본 설정값으로 사용되는 폴더
 plugins/Essentials
-plugins/AnimatedScoreboard/
 plugins/BetterHud/
 plugins/bStats/
 plugins/Chunky/
