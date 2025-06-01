@@ -11,6 +11,9 @@
 !server.properties
 
 # 무시할 특정 플러그인 파일/폴더
+plugins/.paper-remapped
+
+## 유료 플러그인들은 알아서 구매하세요.
 plugins/ItemsAdder_4.0.10-hotfix-1.jar
 plugins/MMOItems-6.10.jar
 plugins/MythicLib-1.7.jar
@@ -20,3 +23,6 @@ plugins/ItemsAdder/
 plugins/HMCCosmetics/
 plugins/MMOItems/
 plugins/MythicLib/
+
+## 기본 설정값으로 사용되는 폴더
+plugins/Essentials
