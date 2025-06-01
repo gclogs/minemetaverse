@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "cecfba9ebe8110cf",
+        "id": "af5d98f01f970646",
         "type": "tabs",
         "children": [
           {
-            "id": "8c820f31c940d1ee",
+            "id": "5fc5aa9ea884a53b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "메인스토리-퀘스트.md",
+                "file": "게임 사운드.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "메인스토리-퀘스트"
+              "title": "게임 사운드"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "76f82f40a551dcef",
@@ -179,19 +178,20 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "8c820f31c940d1ee",
+  "active": "5fc5aa9ea884a53b",
   "lastOpenFiles": [
-    "메인스토리-최종.md",
-    "메인스토리-퀘스트.md",
-    "퀘스트 시스템.md",
-    "코스튬 시스템.md",
     "메인스토리-초안.md",
-    "보상 시스템.md",
-    "마인메타버스 프로젝트 기획.md",
+    "메인스토리-최종.md",
     "README.md",
-    "Excalidraw/게임사운드-다이어그램.excalidraw.md",
     "퀘스트 프로세스.canvas",
+    "퀘스트 시스템.md",
+    "메인스토리-퀘스트.md",
+    "게임 사운드.md",
+    "마인메타버스 프로젝트 기획.md",
+    "코스튬 시스템.md",
+    "전투 시스템.md",
     "보상-플로우차트.canvas",
-    "전투 시스템.md"
+    "보상 시스템.md",
+    "Excalidraw/게임사운드-다이어그램.excalidraw.md"
   ]
 }
