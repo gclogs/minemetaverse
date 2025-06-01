@@ -13,12 +13,32 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "게임 사운드.md",
+                "file": "메인스토리-퀘스트.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "게임 사운드"
+              "title": "메인스토리-퀘스트"
+            }
+          }
+        ]
+      },
+      {
+        "id": "caac4d5c2f0be6f3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2112431597c1cd3e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "메인스토리-최종.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "메인스토리-최종"
             }
           }
         ]
@@ -180,14 +200,14 @@
   },
   "active": "5fc5aa9ea884a53b",
   "lastOpenFiles": [
-    "메인스토리-초안.md",
     "메인스토리-최종.md",
+    "메인스토리-퀘스트.md",
+    "퀘스트 시스템.md",
+    "메인스토리-초안.md",
+    "마인메타버스 프로젝트 기획.md",
+    "게임 사운드.md",
     "README.md",
     "퀘스트 프로세스.canvas",
-    "퀘스트 시스템.md",
-    "메인스토리-퀘스트.md",
-    "게임 사운드.md",
-    "마인메타버스 프로젝트 기획.md",
     "코스튬 시스템.md",
     "전투 시스템.md",
     "보상-플로우차트.canvas",
