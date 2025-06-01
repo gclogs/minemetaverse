@@ -2,6 +2,7 @@
 *
 
 # Except for these files/folders
+!world
 !plugins/
 !plugins/**
 !eula.txt
@@ -10,8 +11,19 @@
 !.gitignore
 !server.properties
 
-# 무시할 특정 플러그인 파일/폴더
+# banned
+!banned-players.json
+!banned-ips.json
+
+# staffs
+!ops.json
+
+## 무시할 특정 플러그인 파일/폴더
 plugins/.paper-remapped
+
+# Ignore plugins/Skript directory but keep scripts folder
+plugins/Skript/
+!plugins/Skript/scripts/
 
 ## 유료 플러그인들은 알아서 구매하세요.
 plugins/ItemsAdder_4.0.10-hotfix-1.jar
@@ -19,6 +31,7 @@ plugins/MMOItems-6.10.jar
 plugins/MythicLib-1.7.jar
 plugins/HMCCosmeticsRemapped-2.7.8.jar
 plugins/HibiscusCommons-0.6.4.jar
+plugins/LoneLibs_1.0.65.jar
 plugins/ItemsAdder/
 plugins/HMCCosmetics/
 plugins/MMOItems/
@@ -26,3 +39,25 @@ plugins/MythicLib/
 
 ## 기본 설정값으로 사용되는 폴더
 plugins/Essentials
+plugins/AnimatedScoreboard/
+plugins/BetterHud/
+plugins/bStats/
+plugins/Chunky/
+plugins/CinematicStudio/
+plugins/CoreProtect/
+plugins/DecentHolograms/
+plugins/FancyNpcs/
+plugins/FastAsyncWorldEdit/
+plugins/FoxAddition/
+plugins/Images/
+plugins/LuckPerms/
+plugins/ModelEngine/
+plugins/Multiverse-Core/
+plugins/MythicDungeons/
+plugins/PhysicsControl/
+plugins/PlaceholderAPI/
+plugins/ProtocolLib/
+plugins/pStats/
+plugins/Quests/
+plugins/Themis/
+plugins/spark/
