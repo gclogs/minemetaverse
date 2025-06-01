@@ -9,3 +9,14 @@
 !start.bat
 !.gitignore
 !server.properties
+
+# 무시할 특정 플러그인 파일/폴더
+plugins/ItemsAdder_4.0.10-hotfix-1.jar
+plugins/MMOItems-6.10.jar
+plugins/MythicLib-1.7.jar
+plugins/HMCCosmeticsRemapped-2.7.8.jar
+plugins/HibiscusCommons-0.6.4.jar
+plugins/ItemsAdder/
+plugins/HMCCosmetics/
+plugins/MMOItems/
+plugins/MythicLib/
