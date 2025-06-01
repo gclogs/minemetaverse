@@ -1,0 +1,234 @@
+{
+  "edges": [
+    {
+      "fromNode": "e39ada5541dc1550",
+      "fromSide": "bottom",
+      "id": "0f40d4822a526354",
+      "styleAttributes": {
+      },
+      "toNode": "8cdd3fa12cf78eb9",
+      "toSide": "top"
+    },
+    {
+      "fromNode": "e33215468d60b284",
+      "fromSide": "bottom",
+      "id": "3be67b1f4995b3e6",
+      "styleAttributes": {
+      },
+      "toNode": "669725000b80f90f",
+      "toSide": "top"
+    },
+    {
+      "fromNode": "669725000b80f90f",
+      "fromSide": "bottom",
+      "id": "85c542d14ec23515",
+      "styleAttributes": {
+      },
+      "toNode": "624b46a4d617be4e",
+      "toSide": "top"
+    },
+    {
+      "color": "4",
+      "fromNode": "624b46a4d617be4e",
+      "fromSide": "bottom",
+      "id": "3457c735d3235853",
+      "styleAttributes": {
+        "path": null,
+        "pathfindingMethod": "square"
+      },
+      "toNode": "e39ada5541dc1550",
+      "toSide": "left"
+    },
+    {
+      "fromNode": "8cdd3fa12cf78eb9",
+      "fromSide": "bottom",
+      "id": "4bd62352ac16748b",
+      "styleAttributes": {
+      },
+      "toNode": "066d1d0d26646fff",
+      "toSide": "top"
+    },
+    {
+      "fromNode": "066d1d0d26646fff",
+      "fromSide": "right",
+      "id": "365d3fccffa9dfcd",
+      "label": "만약",
+      "styleAttributes": {
+      },
+      "toNode": "d53922c05fc9c677",
+      "toSide": "left"
+    },
+    {
+      "fromNode": "d53922c05fc9c677",
+      "fromSide": "right",
+      "id": "7258f7b132346059",
+      "label": "yes",
+      "styleAttributes": {
+      },
+      "toNode": "7ef13401c6f8ff20",
+      "toSide": "left"
+    },
+    {
+      "fromNode": "d53922c05fc9c677",
+      "fromSide": "right",
+      "id": "5cfc557324fecdb3",
+      "label": "no",
+      "styleAttributes": {
+      },
+      "toNode": "b862a015ab83f95e",
+      "toSide": "left"
+    },
+    {
+      "fromNode": "066d1d0d26646fff",
+      "fromSide": "bottom",
+      "id": "1c880cb36e9ea83f",
+      "styleAttributes": {
+      },
+      "toNode": "e201ff243e4404a9",
+      "toSide": "top"
+    },
+    {
+      "fromNode": "e201ff243e4404a9",
+      "fromSide": "bottom",
+      "id": "088684e9596e2b64",
+      "styleAttributes": {
+      },
+      "toNode": "e33215468d60b284",
+      "toSide": "top"
+    }
+  ],
+  "metadata": {
+    "frontmatter": {
+    },
+    "version": "1.0-1.0"
+  },
+  "nodes": [
+    {
+      "height": 1096,
+      "id": "39d539548270d59d",
+      "label": "퀘스트 프로세스",
+      "type": "group",
+      "width": 320,
+      "x": -320,
+      "y": -40
+    },
+    {
+      "height": 60,
+      "id": "7ef13401c6f8ff20",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "text": "던전 퀘스트 - 미션 수주(발행)",
+      "type": "text",
+      "width": 260,
+      "x": 400,
+      "y": 267
+    },
+    {
+      "color": "5",
+      "height": 117,
+      "id": "d53922c05fc9c677",
+      "styleAttributes": {
+        "shape": "diamond",
+        "textAlign": "center"
+      },
+      "text": "다른 퀘스트 수주시",
+      "type": "text",
+      "width": 160,
+      "x": 160,
+      "y": 350
+    },
+    {
+      "color": "2",
+      "height": 60,
+      "id": "624b46a4d617be4e",
+      "styleAttributes": {
+      },
+      "text": "퀘스트 정보 UI 갱신",
+      "type": "text",
+      "width": 280,
+      "x": -300,
+      "y": 976
+    },
+    {
+      "height": 60,
+      "id": "e201ff243e4404a9",
+      "styleAttributes": {
+      },
+      "text": "퀘스트 UI 완료 - 미션 완료",
+      "type": "text",
+      "width": 280,
+      "x": -300,
+      "y": 447
+    },
+    {
+      "height": 60,
+      "id": "e33215468d60b284",
+      "styleAttributes": {
+      },
+      "text": "퀘스트 UI 제거",
+      "type": "text",
+      "width": 280,
+      "x": -300,
+      "y": 624
+    },
+    {
+      "height": 60,
+      "id": "669725000b80f90f",
+      "styleAttributes": {
+      },
+      "text": "플레이어 보관함에 보상 지급",
+      "type": "text",
+      "width": 280,
+      "x": -300,
+      "y": 801
+    },
+    {
+      "color": "4",
+      "height": 60,
+      "id": "e39ada5541dc1550",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "text": "시작",
+      "type": "text",
+      "width": 280,
+      "x": -300,
+      "y": -20
+    },
+    {
+      "height": 60,
+      "id": "8cdd3fa12cf78eb9",
+      "styleAttributes": {
+      },
+      "text": "퀘스트 UI 안내 - 미션 수주(발행)",
+      "type": "text",
+      "width": 280,
+      "x": -300,
+      "y": 93
+    },
+    {
+      "height": 60,
+      "id": "066d1d0d26646fff",
+      "styleAttributes": {
+      },
+      "text": "미션 수행하기",
+      "type": "text",
+      "width": 280,
+      "x": -300,
+      "y": 270
+    },
+    {
+      "height": 60,
+      "id": "b862a015ab83f95e",
+      "styleAttributes": {
+        "textAlign": "center"
+      },
+      "text": "[알림] 메인 퀘스트를 수행중이라 \n다른 퀘스트를 수주할 수 없음",
+      "type": "text",
+      "width": 260,
+      "x": 400,
+      "y": 467
+    }
+  ]
+}
