@@ -1,0 +1,11 @@
+npcs:
+  rea: FancyNpcs 41e3d3ea-2c60-4ae6-83ed-cdd3f363cd93
+
+npc_conversations:
+  rea: "rea"
+
+events:
+  
+
+package:
+  version: 3.0.0-QUEST-12 # Don't change this! The plugin's automatic quest updater handles it.

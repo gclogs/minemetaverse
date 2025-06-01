@@ -1,0 +1,23 @@
+
+objectives:
+  # 터미널 체크 목표
+  check_terminal1: "location 100;200;300;world 5 
+    conditions:has_sophia_quest_started,
+    events:analyze_fake_news1,obtain_truth_compass"
+  check_terminal2: "location 100;200;300;world 5 
+    conditions:has_sophia_quest_started,
+    events:analyze_fake_news2,obtain_credibility_scanner"
+  check_terminal3: "location 100;200;300;world 5 
+    conditions:has_sophia_quest_started,
+    events:analyze_fake_news3,obtain_emotion_filter"
+
+  # 로봇과 대화 목표
+  talk_to_robot1: "npcinteract sophia interaction:right 
+    conditions:has_sophia_quest_started,
+    events:tag_robot1_talked"
+  talk_to_robot2: "npcinteract sophia interaction:right 
+    conditions:has_sophia_quest_started,
+    events:tag_robot2_talked"
+  talk_to_robot3: "npcinteract sophia interaction:right 
+    conditions:has_sophia_quest_started,
+    events:tag_robot3_talked"
