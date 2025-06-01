@@ -8,7 +8,7 @@ items:
   truth_compass: "simple 
     compass
     name:&b진실의_나침반
-    lore:&7알레아에서_제작한_진실의_나침반.;&7누가,_언제,_어디서_작성했는지_추적할_수_있다.;&7거짓_정보일수록_바늘이_불안정하게_떨린다."
+    lore:&7네메스에서_제작한_진실의_나침반.;&7누가,_언제,_어디서_작성했는지_추적할_수_있다.;&7거짓_정보일수록_바늘이_불안정하게_떨린다."
   credibility_scanner: "simple 
     clock
     name:&b신뢰도_측정기
@@ -23,9 +23,8 @@ variables:
   scientist_name: 소피아 박사
   reward_amount: 100
 
-
 conditions:
-  # 퀘스트 상태 관련 조건
+  # 챕터1 소피아 퀘스트 상태 관련 조건
   has_sophia_quest_started: tag sophia_quest_started
   has_sophia_quest_onprogress: tag sophia_quest_onprogress
   has_sophia_quest_completed: tag sophia_quest_completed

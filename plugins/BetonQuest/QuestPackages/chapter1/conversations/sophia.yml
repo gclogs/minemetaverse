@@ -1,7 +1,7 @@
 conversations: 
   sophia: 
     quester: "소피아 박사" 
-    first: "sophia_1,sophia_8"
+    first: "sophia_1,sophia_on_progress,sophia_completed"
     NPC_options: 
       sophia_1:
         text: 
@@ -10,7 +10,7 @@ conversations:
           - "소식을 많이 들었지만 이렇게 가까이 뵙는 것은 처음이네요."
           - "소피아입니다."
         pointers: player_1
-        conditions: "!has_sophia_quest_started"
+        conditions: "!has_sophia_quest_started,!has_sophia_quest_completed"
       sophia_2:
         text: 
           - "슈도스 바이러스가 우리가 예상했던 것보다 훨씬 더 진화했습니다."
@@ -26,11 +26,11 @@ conversations:
       sophia_4:
         text: 
           - "좋은 질문이에요! 바로 그런 의구심이 필요한 거죠."
-          - "&7(태블릿을 보여주며)&r 보세요, 이 태블릿에 실제 &7알레아 &r데이터가 있어요."
+          - "&7(태블릿을 보여주며)&r 보세요,"
+          - "이 태블릿에 실제 &a네메스 &r데이터가 있어요."
         pointers: player_4
       sophia_5:
         text: 
-          - "제주도 보건소 공식 발표도 있고요."
           - "하지만 더 중요한 건, 이런 검증 과정을 스스로 할 수 있는 능력을 기르는 것입니다."
         pointers: player_5
       sophia_6:
@@ -46,14 +46,21 @@ conversations:
           - "각각 다른 유형의 조작 기법을 사용하고 있어요."
         events: "sophia_quest_start"
         conditions: "!has_sophia_quest_started"
-        pointers: player_8
+        pointers: player_ok,player_think
 
-      sophia_8:
+      sophia_on_progress:
         text: 
-          - "완벽한 알레테이아 칩을 만들기 위해서는"
-          - "&c진실의 나침반, 신뢰도 측정기, 감정 필터&r가 필요합니다."
+          - "&a퀘스트 진행중.."
+          - "&r"
+          - "완벽한 &6알레테이아 칩&r을 만들기 위해서는"
+          - "&b(1)진실의 나침반, (2)신뢰도 측정기, (3)감정 필터&r가 필요합니다."
           - "행운을 빕니다. 가디언."
         conditions: "has_sophia_quest_started"
+      sophia_completed:
+        text: 
+          - "터미널을 지난 뒤,"
+          - "이곳을 빠져나가 &a레아&r에게 도움을 요청하세요."
+        conditions: "has_sophia_quest_completed"
 
     player_options:
       player_1: 
@@ -75,6 +82,10 @@ conversations:
         text: "다음"
         pointers: sophia_7
       
-      player_8:
-        text: "어떤 기준으로 판별해야 하나요?"
-        pointers: sophia_8
+      player_ok:
+        text: "알겠습니다. 어떤 기준으로 판별해야 하나요?"
+        events: "sophia_quest_start"
+        pointers: sophia_on_progress
+      player_think:
+        text: "잠시 생각좀.."
+        pointers: sophia_on_progress

@@ -4,8 +4,51 @@ npcs:
 npc_conversations:
   rea: "rea"
 
+items:
+  truth_restorer: "simple 
+    clock
+    name:&b진실_복원기
+    lore:&7레아가_자신의_피해_경험을_바탕으로_개발한_특수_장치.;&7알레테이아_칩_기술과_딥페이크_탐지_알고리즘을_결합하여;&7조작된_미디어를_원본으로_되돌릴_수_있다."
+  mirrobot_guidebook: "simple 
+    book
+    name:&b미로봇_가이드북
+    lore:&71._딥페이크는_눈_움직임이_어색할_때가_있습니다;&72._얼굴과_목_경계가_부자연스럽게_흐려져_있어요;&73._얼굴과_몸의_조명이_달라요;&74._말과_입_모양이_미묘하게_안_맞을_수_있어요"
+
+conditions:
+  # 챕터2 레아 퀘스트  상태 관련 조건
+  has_rea_quest_started: tag rea_quest_started
+  has_rea_quest_completed: tag rea_quest_completed
+
 events:
+  # 챕터2 레아 퀘스트 시작, 완료 이벤트
+  rea_quest_start: "folder 
+    tag_add_rea_quest_started"
+  rea_quest_complete: 
+    "folder 
+    tag_add_rea_quest_completed,\
+    tag_del_rea_quest_started,\
+    advancement_rea_quest_complete"
   
+  # 챕터2 레아 퀘스트
+  tag_add_rea_quest_started: tag add rea_quest_started
+  tag_add_rea_quest_completed: tag add rea_quest_completed
+  tag_del_rea_quest_started: tag del rea_quest_started
+  tag_del_rea_quest_completed: tag del rea_quest_completed
+
+  # 챕터2 레아 퀘스트 알림
+  advancement_rea_quest_complete: "notify &a레아 퀘스트 완료\n레아가 퀘스트를 완료했습니다. io:advancement"
+
+  # 챕터2 레아 퀘스트 보상 이벤트
+  rea_quest_reward: folder give_money, give_exp
+
+  # 경험치와 돈 보상
+  give_money: command economy give %player% 500
+  give_exp: command exp give %player% 100
+
+  # 레아 퀘스트 - 에코 목소리 구별하기
+
+  # 챕터2 레아 퀘스트 아이템 지급
+  obtain_mirrobot_guidebook: give mirrobot_guidebook 1
 
 package:
   version: 3.0.0-QUEST-12 # Don't change this! The plugin's automatic quest updater handles it.

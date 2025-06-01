@@ -1,27 +1,64 @@
 conversations: 
   rea: 
     quester: "레아" 
-    first: "rea_1"
+    first: "rea_1,rea_on_progress,rea_completed"
     NPC_options: 
       rea_1:
         text: 
           - "반갑습니다... 저는 레아에요."
           - "&a소피아 박사&r님을 통해 전해 들었습니다."
-          - "이곳은 딥페이크 피해자들을 돕는 &b딥룸&r이에요."
+          - "이곳은 딥페이크 피해자들을 돕는 &b파테리온&r이에요."
           - "지금 상황은... 심각합니다."
         pointers: player_1
+        conditions: "chapter1.has_sophia_quest_completed,!has_rea_quest_started,!has_rea_quest_completed"
 
       rea_2:
         text: 
-          - "딥페이크는 인공지능을 이용해, &c얼굴,목소리&r를 다른 영상에 합성하는 기술이에요."
-          - "원래는 영화나, CG 등의 작업에 도움을 주는 기술이었지만..."
+          - "딥페이크는 인공지능을 이용해,"
+          - "&c얼굴,목소리&r를 다른 영상에 합성하는 기술이에요."
+          - "원래는 영화나, 그래픽 등의 작업에 도움을 주는 기술이었지만..."
         pointers: player_2
       rea_3:
         text: 
           - "지금은 악용 되어 사람들을 해치는 무기가 되었어요."
-          - "에코의 목소리로 만든 가짜 팟캐스트에요. 너무 자연스럽죠?"
+          - "에코의 목소리로 만든 가짜 팟캐스트에요."
+          - "너무 자연스럽죠?"
         pointers: player_3
-        events: 
+      rea_4:
+        text: 
+          - "그게 문제입니다."
+          - "기술이 발전할수록 더욱 구별하기 어려워지고 있어요."
+          - "하지만 몇 가지 단서가 있습니다."
+        pointers: player_4
+        events: ""
+      rea_5:
+        text: 
+          - "맞아요.. 그래서 더 문제입니다."
+        pointers: player_5
+      rea_6:
+        text: 
+          - "미러 봇을 정화할 &b진실 복원기&r가 필요합니다."
+          - "&b5개&r만 구해주실 수 있을까요..?"
+          - "&7&o미러 봇을 처치하여 진실 복원기를 얻을 수 있습니다."
+        pointers: player_ok,player_think
+        conditions: "chapter1.has_sophia_quest_completed,!has_rea_quest_started"
+      rea_ok:
+        text: 
+          - "네, 생각이 바뀌면 다시 말을 걸어주세요."
+      
+      rea_on_progress:
+        text: 
+          - "&a퀘스트 진행중.."
+          - "&r"
+          - "미러 봇을 정화할 &b진실 복원기&r가 필요합니다."
+          - "&b5개&r만 구해주실 수 있을까요..?"
+          - "&7&o미러 봇을 처치하여 진실 복원기를 얻을 수 있습니다."
+        conditions: "has_rea_quest_started"
+      rea_completed:
+        text: 
+          - "&a소피아 박사&r님에게 가보세요!"
+        conditions: "has_rea_quest_completed"
+
     player_options: 
       player_1:
         text: 
@@ -30,3 +67,20 @@ conversations:
       player_2:
         text: "다음"
         pointers: rea_3
+      player_3:
+        text: "어떻게 구별할 수 있죠?"
+        pointers: rea_4
+        events: ""
+      player_4:
+        text: "... 판별하기 어렵겠네요."
+        pointers: rea_5
+      player_5:
+        text: "그럼 어떻게 구별할 수 있을까요?"
+        pointers: rea_6
+      
+      player_ok:
+        text: "네, 알겠습니다."
+        events: "rea_quest_start"
+      player_think:
+        text: "잠시 생각좀.."
+        pointers: rea_ok
