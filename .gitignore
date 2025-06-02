@@ -3,7 +3,6 @@
 
 # Except for these files/folders
 !README.md
-!world
 !plugins/
 !plugins/**
 !eula.txt
@@ -34,6 +33,8 @@ plugins/ItemsAdder/
 plugins/HMCCosmetics/
 plugins/MMOItems/
 plugins/MythicLib/
+plugins/CMI-9.7.14.2.jar
+plugins/CMILib1.5.4.4.jar
 
 ## 기본 설정값으로 사용되는 폴더
 plugins/Essentials
@@ -58,3 +59,8 @@ plugins/pStats/
 plugins/Quests/
 plugins/Themis/
 plugins/spark/
+
+## CMI 폴더는 무시하되 Warps.yml 파일은 추적
+plugins/CMI/
+plugins/CMILib/
+!plugins/CMI/Saves/Warps.yml
