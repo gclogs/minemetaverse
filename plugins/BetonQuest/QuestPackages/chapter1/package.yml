@@ -1,12 +1,18 @@
 npcs:
   sophia: FancyNpcs b24761a6-d627-4193-a2a4-6d9784160e3f
+  phil: FancyNpcs 7170a7e9-d009-4f6c-a98f-19bea916e770
+  vera: FancyNpcs 445f2010-39b5-4289-860a-dfec852c2c86
+  cred: FancyNpcs cc169b07-e41c-4428-99ff-4d15d8208e07
 
 npc_conversations:
   sophia: "sophia"
+  phil: "phil"
+  vera: "vera"
+  cred: "cred"
 
 items:
   truth_compass: "simple 
-    compass
+    clock
     name:&b진실의_나침반
     lore:&7네메스에서_제작한_진실의_나침반.;&7누가,_언제,_어디서_작성했는지_추적할_수_있다.;&7거짓_정보일수록_바늘이_불안정하게_떨린다."
   credibility_scanner: "simple 
@@ -14,9 +20,9 @@ items:
     name:&b신뢰도_측정기
     lore:&7정보_제공자의_전문성과_신뢰성을_스캔하는_장치.;&7작성자의_배경,_전문_분야,_과거_기록을_분석하여;&7신뢰도를_수치로_표시한다."
   emotion_filter: "simple 
-    glass
+    clock
     name:&b감정_필터
-    lore:&7자극적이고_선동적인_표현을_감지하는_특수_렌즈.&7냉정한_판단을_도와주는_필수_도구."
+    lore:&7자극적이고_선동적인_표현을_감지하는_특수_렌즈.;&7냉정한_판단을_도와주는_필수_도구."
 
 variables:
   chapter_name: 가짜뉴스 판단 능력 기르기
@@ -33,27 +39,19 @@ conditions:
   has_truth_compass: item truth_compass:1
   has_credibility_scanner: item credibility_scanner:1
   has_emotion_filter: item emotion_filter:1
-  
-  # # 특정 터미널 확인 조건
-  # near_terminal1: location 100;64;100;world 5
-  # near_terminal2: location 110;64;100;world 5
-  # near_terminal3: location 120;64;100;world 5
 
-    # # 소피아 박사 근처 조건
-  # near_sophia: npclocation  %npcloc.sophia.x%;%npcloc.sophia.y%;%npcloc.sophia.z%;%npcloc.sophia.world% 5
+  # 챕터1-서브 필 퀘스트 상태 관련 조건
+  has_phil_quest_started: tag phil_quest_started
+  has_phil_quest_completed: tag phil_quest_completed
 
-    # # 터미널 퀘스트 완료 조건
-  # terminal1_completed: objective check_terminal1
-  # terminal2_completed: objective check_terminal2
-  # terminal3_completed: objective check_terminal3
+  # 챕터1-서브 베라 퀘스트 상태 관련 조건
+  has_vera_quest_started: tag vera_quest_started
+  has_vera_quest_skipped: tag vera_quest_skipped
+  has_vera_quest_completed: tag vera_quest_completed
 
-    # 모든 터미널 확인 완료 조건
-  # all_terminals_checked: and terminal1_completed,terminal2_completed,terminal3_completed
-
-    # 로봇 대화 조건
-  robot1_talked: tag robot1_conversation
-  robot2_talked: tag robot2_conversation
-  robot3_talked: tag robot3_conversation
+  # 챕터1-서브 크레드 퀘스트 상태 관련 조건
+  has_cred_quest_started: tag cred_quest_started
+  has_cred_quest_completed: tag cred_quest_completed
 
 events:
   sophia_quest_start: "folder 
@@ -64,14 +62,16 @@ events:
     tag_del_sophia_quest_started,\
     advancement_sophia_quest_complete"
   
-  # 챕터1 소피아 퀘스트
+  #################################################
+  # 챕터1-소피아 퀘스트
+  #################################################
   tag_add_sophia_quest_started: tag add sophia_quest_started
   tag_add_sophia_quest_completed: tag add sophia_quest_completed
   tag_del_sophia_quest_started: tag del sophia_quest_started
   tag_del_sophia_quest_completed: tag del sophia_quest_completed
   
   # 챕터1 소피아 퀘스트 알림
-  advancement_sophia_quest_complete: "notify &a소피아 퀘스트 시작\n소피아 박사가 퀘스트를 시작했습니다. io:advancement"
+  advancement_sophia_quest_complete: "notify &a소피아 퀘스트 완료\n연구실이 왜 이렇게 어두워? io:advancement"
   
   # 챕터1 소피아 퀘스트 보상 이벤트
   quest_reward: folder give_money, give_exp
@@ -80,29 +80,82 @@ events:
   give_money: command economy give %player% 500
   give_exp: command exp give %player% 100
   
-  # 챕터1 소피아 퀘스트 아이템 획득 이벤트
-  obtain_truth_compass: give truth_compass 1
-  obtain_credibility_scanner: give credibility_scanner 1
-  obtain_emotion_filter: give emotion_filter 1
-  
-  # 챕터1 소피아 퀘스트 아이템 소모 이벤트
+  # 챕터1-마지막 소피아 퀘스트 아이템 소모 이벤트
   take_truth_compass: take truth_compass 1
   take_credibility_scanner: take credibility_scanner 1
   take_emotion_filter: take emotion_filter 1
   
-  # 챕터1 소피아 퀘스트 로봇 대화 태그 이벤트
-  tag_robot1_talked: tag add robot1_conversation
-  tag_robot2_talked: tag add robot2_conversation
-  tag_robot3_talked: tag add robot3_conversation
+  #################################################
+  # 챕터1-서브 퀘스트: 필 (PHIL)
+  #################################################
+  phil_quest_start: "folder 
+    tag_add_phil_quest_started"
+  phil_quest_end: 
+    "folder 
+    tag_add_phil_quest_completed,\
+    tag_del_phil_quest_started,\
+    advancement_phil_quest_complete"
   
-  # 챕터 완료 메시지
-  sophia_complete_message: notify &a챕터 1 완료\n\"가짜뉴스 판단 능력 기르기\"를 완료했습니다. io:title
+  # 필 퀘스트 태그 관리
+  tag_add_phil_quest_started: tag add phil_quest_started
+  tag_add_phil_quest_completed: tag add phil_quest_completed
+  tag_del_phil_quest_started: tag del phil_quest_started
+  tag_del_phil_quest_completed: tag del phil_quest_completed
   
-  analyze_fake_news1: 'notify &a첫 번째 뉴스 분석 - 제주도 신종 바이러스 발견, 치사율 78%: &c출처가 불명확하고
-    공식 발표가 없습니다. 가짜뉴스입니다.'
-  analyze_fake_news2: 'notify &a두 번째 뉴스 분석 - OOO사 2,500만명의 디지털 디바이스 정보 유출: &c신뢰할 수
-    있는 출처가 없고 구체적인 회사명이 명시되지 않았습니다. 가짜뉴스입니다.'
-  analyze_fake_news3: 'notify &a세 번째 뉴스 분석 - 마스크 착용이 오히려 감염 위험을 높인다: &c과학적 근거 없이 감정을
-    자극하는 표현이 사용되었습니다. 가짜뉴스입니다.'
+  # 필 퀘스트 알림
+  advancement_phil_quest_complete: "notify &a필 퀘스트 완료\n너..! 또 핸드폰 하고 있어? io:advancement"
+
+  # 필 퀘스트 보상
+  obtain_emotion_filter: give emotion_filter 1
+
+  #################################################
+  # 챕터1-서브 퀘스트: 베라 (VERA)
+  #################################################
+  vera_quest_start: "folder 
+    tag_add_vera_quest_started"
+  vera_quest_end: 
+    "folder 
+    tag_add_vera_quest_completed,\
+    tag_del_vera_quest_started,\
+    tag_del_vera_quest_skipped,\
+    advancement_vera_quest_complete"
+
+  # 베라 퀘스트 태그 관리
+  tag_add_vera_quest_started: tag add vera_quest_started
+  tag_add_vera_quest_skipped: tag add vera_quest_skipped
+  tag_add_vera_quest_completed: tag add vera_quest_completed
+  tag_del_vera_quest_started: tag del vera_quest_started
+  tag_del_vera_quest_skipped: tag del vera_quest_skipped
+  tag_del_vera_quest_completed: tag del vera_quest_completed
+
+  # 베라 퀘스트 알림
+  advancement_vera_quest_complete: "notify &a베라 퀘스트 완료\n진실은...하나! io:advancement"
+
+  # 베라 퀘스트 보상
+  obtain_truth_compass: give truth_compass 1
+
+  #################################################
+  # 챕터1-서브 퀘스트: 크레드 (CRED)
+  #################################################
+  cred_quest_start: "folder 
+    tag_add_cred_quest_started"
+  cred_quest_end: 
+    "folder 
+    tag_add_cred_quest_completed,\
+    tag_del_cred_quest_started,\
+    advancement_cred_quest_complete"
+
+  # 크레드 퀘스트 태그 관리
+  tag_add_cred_quest_started: tag add cred_quest_started
+  tag_add_cred_quest_completed: tag add cred_quest_completed
+  tag_del_cred_quest_started: tag del cred_quest_started
+  tag_del_cred_quest_completed: tag del cred_quest_completed
+
+  # 크레드 퀘스트 알림
+  advancement_cred_quest_complete: "notify &a크레드 퀘스트 완료\n정말.. 믿어도 되는 걸까? io:advancement"
+
+  # 크레드 퀘스트 보상
+  obtain_credibility_scanner: give credibility_scanner 1
+
 package:
   version: 3.0.0-QUEST-12 # Don't change this! The plugin's automatic quest updater handles it.

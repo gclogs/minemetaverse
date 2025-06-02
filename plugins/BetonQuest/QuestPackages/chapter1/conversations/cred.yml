@@ -1,0 +1,144 @@
+conversations:
+  cred:
+    quester: "크레드"
+    first: "cred_start,cred_1,cred_completed"
+    NPC_options:
+      cred_start:
+        text:
+          - "당신이 소피아 박사님이 말씀하신 가디언인가요?"
+          - "정말 반가워요!"
+        pointers: player_start,player_no
+        conditions: "!has_cred_quest_started"
+      cred_1:
+        text:
+          - "신뢰도 측정기를 개발하고 있어요!"
+          - "정보가 얼마나 믿을 만한지 판별하는 도구죠."
+        pointers: player_1
+        conditions: "has_cred_quest_started"
+      cred_2:
+        text:
+          - "어떤 건 정말 신뢰할 만한 언론사에서 나온 거고,"
+          - "어떤 건... 음, 좀 의심스러운 곳에서 나온 거예요."
+        pointers: player_2
+      cred_3:
+        text:
+          - "사실 저도 예전에는 구별 못했어요."
+          - "초등학교 때 정말 큰 실수를 했거든요."
+        pointers: player_3
+      cred_4:
+        text:
+          - "'학교에 곰이 나타났다!'는 뉴스를 보고"
+          - "확인도 안 하고 친구들한테 다 퍼뜨렸어요."
+          - "그런데 그게 완전 가짜였던 거죠!"
+        pointers: player_4
+      cred_5:
+        text:
+          - "학교 전체가 난리가 났어요. 학부모들이 몰려오고, 선생님들은 당황하고..."
+          - "나중에 가짜라는 걸 알았을 때 정말 죄송했어요."
+        pointers: player_5
+      cred_6:
+        text:
+          - "그때 깨달았죠. 정보를 퍼뜨리기 전에 반드시 확인해야 한다는 걸!"
+        pointers: player_6
+      cred_7:
+        text:
+          - "맞아요! 이제는 누구도 저처럼 실수하지 않도록 도와주고 싶어요."
+        pointers: player_7
+      cred_8:
+        text:
+          - "이 도구로 정보의 출처, 작성자의 전문성, 언론사의 신뢰도를"
+          - "종합적으로 분석할 수 있어요."
+        pointers: player_8
+      cred_9:
+        text:
+          - "예를 들어... 이 기사는 의학 전문 기자가 쓴 거고,"
+          - "이건 전문가 인터뷰가 포함되어 있어요."
+          - "반면 이건..."
+        pointers: player_9
+      cred_10:
+        text:
+          - "작성자 정보가 없고, 출처도 명확하지 않아요."
+          - "그리고 너무 자극적인 표현만 가득하죠."
+        pointers: player_10
+      cred_11:
+        text:
+          - "가장 중요한 건 &c누가, 언제, 어디서, 왜&r를 확인하는 거예요!"
+        pointers: player_11
+      cred_12:
+        text:
+          - "물론이죠! 이거 하나 가져가세요!"
+        pointers: player_12
+      cred_13:
+        text:
+          - "100% 완벽한 도구는 없어요. 가장 중요한 건"
+          - "&c의심하되 비난하지 말고, 확인하되 비웃지 말자&r는 거예요!"
+        pointers: player_ok
+      cred_completed:
+        text:
+          - "천만에요!"
+          - "그리고 혹시 확실하지 않으면 저에게 물어보세요."
+          - "함께 확인해볼게요!"
+        conditions: "has_cred_quest_completed"
+
+    player_options:
+      player_start:
+        text:
+          - "네, 맞습니다. 여기서 뭘 하고 계신가요?"
+        pointers: cred_1
+        events: "cred_quest_start"
+      player_no:
+        text:
+          - "예? 저는 안 반가워요."
+      player_1:
+        text:
+          - "다음"
+        pointers: cred_2
+      player_2:
+        text:
+          - "어떻게 구별하는 건가요?"
+        pointers: cred_3
+      player_3:
+        text:
+          - "다음"
+        pointers: cred_4
+      player_4:
+        text:
+          - "그래서 어떻게 됐나요?"
+        pointers: cred_5
+      player_5:
+        text:
+          - "다음"
+        pointers: cred_6
+      player_6:
+        text:
+          - "그래서 이 측정기를 만들게 된 거군요?"
+        pointers: cred_7
+      player_7:
+        text:
+          - "다음"
+        pointers: cred_8
+      player_8:
+        text:
+          - "다음"
+        pointers: cred_9
+      player_9:
+        text:
+          - "뭐가 문제인가요?"
+        pointers: cred_10
+      player_10:
+        text:
+          - "다음"
+        pointers: cred_11
+      player_11:
+        text:
+          - "저도 사용해볼 수 있을까요?"
+        pointers: cred_12
+      player_12:
+        text:
+          - "다음"
+        pointers: cred_13
+      player_ok:
+        text:
+          - "고마워요. 크레드 잘 사용할게요."
+        pointers: cred_completed
+        events: "cred_quest_end"
