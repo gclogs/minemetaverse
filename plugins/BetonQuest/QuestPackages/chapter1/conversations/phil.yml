@@ -5,73 +5,86 @@ conversations:
     NPC_options: 
       phil_1:
         text: 
-          - "당신이 소피아 박사님이 말씀하신 가디언인가요?"
+          - "당신이 소피아 박사님이 말씀하신 가디언이군요."
         pointers: player_1-1,player_1-2,player_1-3
-        conditions: "!has_phil_quest_started"
+        events: "voice_stop,voice_phil_15"
+        conditions: "has_sophia_quest_started,!has_phil_quest_started,!has_phil_quest_completed"
       phil_2:
         text: 
           - "감정 필터를 개발하고 있어요."
           - "사람들이 더 이상 감정에 휘둘려 잘못된 판단을 하지 않도록 돕는 도구죠."
         pointers: player_2
-        conditions: "has_phil_quest_started"
+        events: "voice_stop,voice_phil_16"
+        conditions: "has_phil_quest_started,!has_phil_quest_completed"
       phil_3:
         text: 
           - "저도 한때는 SNS를 정말 좋아했어요."
           - "사람들과 소통하고, 정보를 공유하고... 그런 게 즐거웠거든요."
         pointers: player_3
+        events: "voice_stop,voice_phil_18"
       phil_4:
         text: 
           - "하지만 점점 SNS가 변해가는 걸 봤어요."
           - "사람들이 서로 비난하고, 힐난하고..."
           - "작은 일에도 극단적으로 반응하면서 싸우기 시작했죠."
         pointers: player_4
+        events: "voice_stop,voice_phil_20"
       phil_5:
         text: 
           - "맞아요. 처음엔 저도 그런 감정의 소용돌이에 휘말렸어요."
           - "어떤 게시물을 보면 순간적으로 화가 나고,"
           - "당장 댓글을 달고 싶어지고..."
         pointers: player_5
+        events: "voice_stop,voice_phil_22"
       phil_6:
         text: 
           - "하지만 나중에 냉정해지면 후회가 되더라고요."
-          - "'내가 왜 저렇게 반응했을까?' 하면서요."
-          - "그때 깨달았어요."
+          - "&c\"내가 왜 저렇게 반응했을까?\"&r 하면서요."
         pointers: player_6
+        events: "voice_stop,voice_phil_25"
       phil_7:
         text: 
-          - "많은 정보들이 의도적으로 우리의 감정을 자극한다는 것을."
+          - "그때 깨달았어요. 많은 정보들이 의도적으로 우리의 감정을 자극한다는 것을."
           - "분노, 공포, 흥분... 이런 감정들이 우리의 판단력을 흐린다는 걸요."
         pointers: player_7
+        events: "voice_stop,voice_phil_26"
       phil_8:
         text: 
           - "이 필터는 텍스트나 영상에서 감정을 과도하게 자극하는 표현들을 감지해요."
-          - "[긴급], [충격], [절대], [반드시] 같은 단어들 말이에요."
+          - "&c[긴급], [충격], [절대], [반드시] &r같은 단어들 말이에요."
         pointers: player_8
+        events: "voice_stop,voice_phil_27"
       phil_9:
         text: 
           - "물론 모든 강한 표현이 나쁜 건 아니에요."
           - "하지만 패턴을 보면 알 수 있어요."
           - "진짜 중요한 정보인지, 아니면 단순히 관심을 끌려는 건지."
         pointers: player_9
+        events: "voice_stop,voice_phil_28"
       phil_10:
         text: 
           - "저부터 달라졌어요."
           - "이제는 뭔가 자극적인 내용을 봐도 한 번 더 생각해보게 돼요."
-          - "'이 정보가 나를 화나게 하려는 건 아닐까?' 하고요."
+          - "&c\"이 정보가 나를 화나게 하려는 건 아닐까?\"&r 하고요."
         pointers: player_10
+        events: "voice_stop,voice_phil_29"
       phil_11:
         text: 
           - "그러면 신기하게도 더 차분하게 판단할 수 있어요."
           - "사실에 집중하고, 감정보다는 논리로 접근하게 되죠."
         pointers: player_11
+        events: "voice_stop,voice_phil_30"
       phil_12:
         text: 
           - "물론이에요! 이거 하나 가져가세요."
           - "혹시 어려운 일이 있으면 언제든 찾아오세요."
         pointers: player_ok
+        events: "voice_stop,voice_phil_31"
       phil_completed:
         text: 
-          - "우리 모두가 더 현명하게 정보를 소비할 수 있다면, 디지털 세상이 훨씬 평화로워질 거예요."
+          - "우리 모두가 더 현명하게 정보를 소비할 수 있다면,"
+          - "디지털 세상이 훨씬 평화로워질 거예요."
+        events: "voice_stop,voice_phil_32"
         conditions: "has_phil_quest_completed"
       
     player_options:

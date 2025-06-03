@@ -1,0 +1,8 @@
+conversations:
+  dark:
+    quester: "???"
+    first: "dark_1"
+    NPC_options:
+      dark_1:
+        text:
+          - "...흠"

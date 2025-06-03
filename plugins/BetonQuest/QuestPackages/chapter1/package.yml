@@ -3,12 +3,14 @@ npcs:
   phil: FancyNpcs 7170a7e9-d009-4f6c-a98f-19bea916e770
   vera: FancyNpcs 445f2010-39b5-4289-860a-dfec852c2c86
   cred: FancyNpcs cc169b07-e41c-4428-99ff-4d15d8208e07
+  dark: FancyNpcs 7699aebb-e1ae-42cf-9f46-6a787a4f1bd4
 
 npc_conversations:
   sophia: "sophia"
   phil: "phil"
   vera: "vera"
   cred: "cred"
+  dark: "dark"
 
 items:
   truth_compass: "simple 
@@ -54,6 +56,16 @@ conditions:
   has_cred_quest_completed: tag cred_quest_completed
 
 events:
+  chapter1_dropped: "folder
+    tag_del_sophia_quest_started,\
+    tag_del_phil_quest_started,\
+    tag_del_vera_quest_started,\
+    tag_del_cred_quest_started,\
+    tag_del_sophia_quest_completed,\
+    tag_del_phil_quest_completed,\
+    tag_del_vera_quest_completed,\
+    tag_del_cred_quest_completed"
+    
   sophia_quest_start: "folder 
     tag_add_sophia_quest_started"
   sophia_quest_end: 
@@ -156,6 +168,68 @@ events:
 
   # 크레드 퀘스트 보상
   obtain_credibility_scanner: give credibility_scanner 1
-
+  
+  #################################################
+  # 챕터1-목소리
+  #################################################
+  voice_stop: "command stopsound %player%"
+  voice_sophia_0: "command iaplaysound metaverse:voice.sophia.audio_0 %player% 1 1.05"
+  voice_sophia_3: "command iaplaysound metaverse:voice.sophia.audio_3 %player% 1 1.05"
+  voice_sophia_4: "command iaplaysound metaverse:voice.sophia.audio_4 %player% 1 1.05"
+  voice_sophia_7: "command iaplaysound metaverse:voice.sophia.audio_7 %player% 1 1.05"
+  voice_sophia_10: "command iaplaysound metaverse:voice.sophia.audio_10 %player% 1 1.05"
+  voice_sophia_11: "command iaplaysound metaverse:voice.sophia.audio_11 %player% 1 1.05"
+  voice_sophia_12: "command iaplaysound metaverse:voice.sophia.audio_12 %player% 1 1.05"
+  voice_sophia_13: "command iaplaysound metaverse:voice.sophia.audio_13 %player% 1 1.05"
+  voice_sophia_14: "command iaplaysound metaverse:voice.sophia.audio_14 %player% 1 1.05"
+  
+  # 필 (Phil) 음성 명령어
+  voice_phil_15: "command iaplaysound metaverse:voice.phil.audio_15 %player% 1 1.1"
+  voice_phil_16: "command iaplaysound metaverse:voice.phil.audio_16 %player% 1 1.1"
+  voice_phil_18: "command iaplaysound metaverse:voice.phil.audio_18 %player% 1 1.1"
+  voice_phil_20: "command iaplaysound metaverse:voice.phil.audio_20 %player% 1 1.1"
+  voice_phil_22: "command iaplaysound metaverse:voice.phil.audio_22 %player% 1 1.1"
+  voice_phil_25: "command iaplaysound metaverse:voice.phil.audio_25 %player% 1 1.1"
+  voice_phil_26: "command iaplaysound metaverse:voice.phil.audio_26 %player% 1 1.1"
+  voice_phil_27: "command iaplaysound metaverse:voice.phil.audio_27 %player% 1 1.1"
+  voice_phil_28: "command iaplaysound metaverse:voice.phil.audio_28 %player% 1 1.1"
+  voice_phil_29: "command iaplaysound metaverse:voice.phil.audio_29 %player% 1 1.1"
+  voice_phil_30: "command iaplaysound metaverse:voice.phil.audio_30 %player% 1 1.1"
+  voice_phil_31: "command iaplaysound metaverse:voice.phil.audio_31 %player% 1 1.1"
+  voice_phil_32: "command iaplaysound metaverse:voice.phil.audio_32 %player% 1 1.1"
+  voice_phil_33: "command iaplaysound metaverse:voice.phil.audio_33 %player% 1 1.1"
+  
+  # 크레드 (Cred) 음성 명령어
+  voice_cred_34: "command iaplaysound metaverse:voice.cred.audio_34 %player% 1 1.05"
+  voice_cred_35: "command iaplaysound metaverse:voice.cred.audio_35 %player% 1 1.05"
+  voice_cred_36: "command iaplaysound metaverse:voice.cred.audio_36 %player% 1 1.05"
+  voice_cred_37: "command iaplaysound metaverse:voice.cred.audio_37 %player% 1 1.05"
+  voice_cred_38: "command iaplaysound metaverse:voice.cred.audio_38 %player% 1 1.05"
+  voice_cred_39: "command iaplaysound metaverse:voice.cred.audio_39 %player% 1 1.05"
+  voice_cred_40: "command iaplaysound metaverse:voice.cred.audio_40 %player% 1 1.05"
+  voice_cred_41: "command iaplaysound metaverse:voice.cred.audio_41 %player% 1 1.05"
+  voice_cred_42: "command iaplaysound metaverse:voice.cred.audio_42 %player% 1 1.05"
+  voice_cred_43: "command iaplaysound metaverse:voice.cred.audio_43 %player% 1 1.05"
+  voice_cred_44: "command iaplaysound metaverse:voice.cred.audio_44 %player% 1 1.05"
+  voice_cred_45: "command iaplaysound metaverse:voice.cred.audio_45 %player% 1 1.05"
+  voice_cred_46: "command iaplaysound metaverse:voice.cred.audio_46 %player% 1 1.05"
+  voice_cred_47: "command iaplaysound metaverse:voice.cred.audio_47 %player% 1 1.05"
+  
+  # 베라 (Vera) 음성 명령어
+  voice_vera_49: "command iaplaysound metaverse:voice.vera.audio_49 %player% 1 1.1"
+  voice_vera_50: "command iaplaysound metaverse:voice.vera.audio_50 %player% 1 1.1"
+  voice_vera_52: "command iaplaysound metaverse:voice.vera.audio_52 %player% 1 1.1"
+  voice_vera_53: "command iaplaysound metaverse:voice.vera.audio_53 %player% 1 1.1"
+  voice_vera_54: "command iaplaysound metaverse:voice.vera.audio_54 %player% 1 1.1"
+  voice_vera_55: "command iaplaysound metaverse:voice.vera.audio_55 %player% 1 1.1"
+  voice_vera_56: "command iaplaysound metaverse:voice.vera.audio_56 %player% 1 1.1"
+  voice_vera_57: "command iaplaysound metaverse:voice.vera.audio_57 %player% 1 1.1"
+  voice_vera_58: "command iaplaysound metaverse:voice.vera.audio_58 %player% 1 1.1"
+  voice_vera_59: "command iaplaysound metaverse:voice.vera.audio_59 %player% 1 1.1"
+  voice_vera_60: "command iaplaysound metaverse:voice.vera.audio_60 %player% 1 1.1"
+  voice_vera_61: "command iaplaysound metaverse:voice.vera.audio_61 %player% 1 1.1"
+  voice_vera_62: "command iaplaysound metaverse:voice.vera.audio_62 %player% 1 1.1"
+  voice_vera_63: "command iaplaysound metaverse:voice.vera.audio_63 %player% 1 1.1"
+  
 package:
   version: 3.0.0-QUEST-12 # Don't change this! The plugin's automatic quest updater handles it.

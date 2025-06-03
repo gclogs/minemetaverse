@@ -12,6 +12,16 @@
 !server.properties
 !.windsurfrules
 
+# 작업한 폴더
+!plugins/ItemsAdder
+!plugins/ItemsAdder/**
+!plugins/DecentHolograms
+!plugins/DecentHolograms/**
+!plugins/CMI
+!plugins/CMI/**
+!plugins/FancyNpcs
+!plugins/FancyNpcs/**
+
 # banned
 !banned-players.json
 !banned-ips.json
@@ -29,7 +39,6 @@ plugins/MythicLib-1.7.jar
 plugins/HMCCosmeticsRemapped-2.7.8.jar
 plugins/HibiscusCommons-0.6.4.jar
 plugins/LoneLibs_1.0.65.jar
-plugins/ItemsAdder/
 plugins/HMCCosmetics/
 plugins/MMOItems/
 plugins/MythicLib/

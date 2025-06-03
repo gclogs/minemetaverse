@@ -1,54 +1,180 @@
+package:
+  version: 3.0.0-QUEST-12 # Don't change this! The plugin's automatic quest updater handles it.
+
 npcs:
+  twis: FancyNpcs d4e78d83-ce3a-460d-89cd-677f1270023e
   rea: FancyNpcs 41e3d3ea-2c60-4ae6-83ed-cdd3f363cd93
+  bug: FancyNpcs 838ab7d2-1bee-4ddf-a8cf-0456d1589233
+  eco: FancyNpcs ac05dd52-5416-48a6-8041-1687125fccef
 
 npc_conversations:
+  twis: "twis"
   rea: "rea"
+  bug: "bug"
+  eco: "eco"
 
 items:
+  resonance_fragment: "simple 
+    nether_star
+    name:&b공명의_조각
+    lore:&7진실한_목소리의_힘이_담긴_조각.;&7에코에게서_받은_이_조각은;&7진실_복원기의_중요한_부품이다."
+  form_fragment: "simple 
+    nether_star
+    name:&b형상의_조각
+    lore:&7진정한_모습을_복원하는_형상의_조각.;&7트위스에게서_받은_이_조각은;&7진실_복원기의_중요한_부품이다."
+  purification_fragment: "simple 
+    nether_star
+    name:&b정화의_조각
+    lore:&7왜곡된_정보를_정화하는_특별한_조각.;&7버그에게서_받은_이_조각은;&7진실_복원기의_중요한_부품이다."
   truth_restorer: "simple 
     clock
     name:&b진실_복원기
-    lore:&7레아가_자신의_피해_경험을_바탕으로_개발한_특수_장치.;&7알레테이아_칩_기술과_딥페이크_탐지_알고리즘을_결합하여;&7조작된_미디어를_원본으로_되돌릴_수_있다."
-  mirrobot_guidebook: "simple 
-    book
-    name:&b미로봇_가이드북
-    lore:&71._딥페이크는_눈_움직임이_어색할_때가_있습니다;&72._얼굴과_목_경계가_부자연스럽게_흐려져_있어요;&73._얼굴과_몸의_조명이_달라요;&74._말과_입_모양이_미묘하게_안_맞을_수_있어요"
+    lore:&7레아가_자신의_피해_경험을_바탕으로_개발한_특수_장치.;;&7알레테이아_칩_기술과_딥페이크_탐지_알고리즘을_결합하여;&7조작된_미디어를_원본으로_되돌릴_수_있다.;;&7단순히_삭제하는_것이_아니라;&7진실을_복원한다는_철학을_담고_있다."
+
+variables:
+  chapter_name: 딥페이크 대응하기
+  reward_amount: 200
 
 conditions:
-  # 챕터2 레아 퀘스트  상태 관련 조건
+  # 챕터2 레아 퀘스트 상태 관련 조건
   has_rea_quest_started: tag rea_quest_started
+  has_rea_quest_onprogress: tag rea_quest_onprogress
   has_rea_quest_completed: tag rea_quest_completed
+  
+  # 챕터2 트위스 퀘스트 상태 관련 조건
+  has_twis_quest_started: tag twis_quest_started
+  has_twis_quest_completed: tag twis_quest_completed
+  
+  # 챕터2 버그 퀘스트 상태 관련 조건
+  has_bug_quest_started: tag bug_quest_started
+  has_bug_quest_completed: tag bug_quest_completed
+  
+  # 챕터2 에코 퀘스트 상태 관련 조건
+  has_eco_quest_started: tag eco_quest_started
+  has_eco_quest_completed: tag eco_quest_completed
+  
+  # 아이템 소지 조건
+  has_resonance_fragment: item resonance_fragment:1
+  has_form_fragment: item form_fragment:1
+  has_purification_fragment: item purification_fragment:1
 
 events:
-  # 챕터2 레아 퀘스트 시작, 완료 이벤트
+  chapter2_dropped: "folder 
+    tag_del_rea_quest_started,\
+    tag_del_twis_quest_started,\
+    tag_del_bug_quest_started,\
+    tag_del_eco_quest_started,\
+    tag_del_rea_quest_completed,\
+    tag_del_twis_quest_completed,\
+    tag_del_bug_quest_completed,\
+    tag_del_eco_quest_completed"
+  
+  #################################################
+  # 챕터2-레아 퀘스트
+  #################################################
   rea_quest_start: "folder 
     tag_add_rea_quest_started"
-  rea_quest_complete: 
+  rea_quest_end: 
     "folder 
     tag_add_rea_quest_completed,\
     tag_del_rea_quest_started,\
     advancement_rea_quest_complete"
   
-  # 챕터2 레아 퀘스트
+  # 레아 퀘스트 태그 관리
   tag_add_rea_quest_started: tag add rea_quest_started
   tag_add_rea_quest_completed: tag add rea_quest_completed
   tag_del_rea_quest_started: tag del rea_quest_started
   tag_del_rea_quest_completed: tag del rea_quest_completed
+  
+  # 레아 퀘스트 알림
+  advancement_rea_quest_complete: "notify &a레아 퀘스트 완료\n진실 복원기의 비밀을 찾아서! io:advancement"
+  
+  # 레아->챕터3 소피아에게로
+  rea_to_sophia: "command warp %player% 네메스_탑"
 
-  # 챕터2 레아 퀘스트 알림
-  advancement_rea_quest_complete: "notify &a레아 퀘스트 완료\n레아가 퀘스트를 완료했습니다. io:advancement"
+  #################################################
+  # 챕터2-트위스 퀘스트
+  #################################################
+  twis_quest_start: "folder 
+    tag_add_twis_quest_started"
+  twis_quest_end: 
+    "folder 
+    tag_add_twis_quest_completed,\
+    tag_del_twis_quest_started,\
+    advancement_twis_quest_complete,\
+    obtain_form_fragment"
+  
+  # 트위스 퀘스트 태그 관리
+  tag_add_twis_quest_started: tag add twis_quest_started
+  tag_add_twis_quest_completed: tag add twis_quest_completed
+  tag_del_twis_quest_started: tag del twis_quest_started
+  tag_del_twis_quest_completed: tag del twis_quest_completed
+  
+  # 트위스 퀘스트 알림
+  advancement_twis_quest_complete: "notify &a트위스 퀘스트 완료\n형상의 조각을 획득했습니다! io:advancement"
+  
+  # 트위스 퀘스트 보상
+  obtain_form_fragment: give form_fragment 1
 
-  # 챕터2 레아 퀘스트 보상 이벤트
-  rea_quest_reward: folder give_money, give_exp
+  # 트위스->버그에게로
+  twis_to_bug: "command warp %player% 파테리온_버그"
 
-  # 경험치와 돈 보상
-  give_money: command economy give %player% 500
-  give_exp: command exp give %player% 100
+  #################################################
+  # 챕터2-버그 퀘스트
+  #################################################
+  bug_quest_start: "folder 
+    tag_add_bug_quest_started"
+  bug_quest_end: 
+    "folder 
+    tag_add_bug_quest_completed,\
+    tag_del_bug_quest_started,\
+    advancement_bug_quest_complete,\
+    obtain_purification_fragment"
+  
+  # 버그 퀘스트 태그 관리
+  tag_add_bug_quest_started: tag add bug_quest_started
+  tag_add_bug_quest_completed: tag add bug_quest_completed
+  tag_del_bug_quest_started: tag del bug_quest_started
+  tag_del_bug_quest_completed: tag del bug_quest_completed
+  
+  # 버그 퀘스트 알림
+  advancement_bug_quest_complete: "notify &a버그 퀘스트 완료\n정화의 조각을 획득했습니다! io:advancement"
+  
+  # 버그 퀘스트 보상
+  obtain_purification_fragment: give purification_fragment 1
 
-  # 레아 퀘스트 - 에코 목소리 구별하기
+  # 버그->레아에게로
+  bug_to_rea: "command warp %player% 파테리온"
 
-  # 챕터2 레아 퀘스트 아이템 지급
-  obtain_mirrobot_guidebook: give mirrobot_guidebook 1
+  #################################################
+  # 챕터2-에코 퀘스트
+  #################################################
+  eco_quest_start: "folder 
+    tag_add_eco_quest_started"
+  eco_quest_end: 
+    "folder 
+    tag_add_eco_quest_completed,\
+    tag_del_eco_quest_started,\
+    advancement_eco_quest_complete,\
+    obtain_resonance_fragment"
+  
+  # 에코 퀘스트 태그 관리
+  tag_add_eco_quest_started: tag add eco_quest_started
+  tag_add_eco_quest_completed: tag add eco_quest_completed
+  tag_del_eco_quest_started: tag del eco_quest_started
+  tag_del_eco_quest_completed: tag del eco_quest_completed
+  
+  # 에코 퀘스트 알림
+  advancement_eco_quest_complete: "notify &a에코 퀘스트 완료\n공명의 조각을 획득했습니다! io:advancement"
+  
+  # 에코 퀘스트 보상
+  obtain_resonance_fragment: give resonance_fragment 1
+  
+  # 에코->트위스에게
+  eco_to_twis: "command warp %player% 파테리온_트위스"
 
-package:
-  version: 3.0.0-QUEST-12 # Don't change this! The plugin's automatic quest updater handles it.
+  # 퀘스트 아이템 소모 이벤트
+  take_resonance_fragment: take resonance_fragment 1
+  take_form_fragment: take form_fragment 1
+  take_purification_fragment: take purification_fragment 1
+  take_all_fragments: folder take_resonance_fragment,take_form_fragment,take_purification_fragment

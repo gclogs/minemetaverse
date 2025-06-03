@@ -1,0 +1,70 @@
+package:
+  version: 3.0.0-QUEST-12 # Don't change this! The plugin's automatic quest updater handles it.
+
+npcs:
+  sophia: FancyNpcs ee79f1b8-73b5-42aa-a159-03de8d1bf36d
+  code: FancyNpcs 62655b67-616b-462f-952d-626224b3235b
+
+npc_conversations:
+  sophia: "sophia"
+  code: "code"
+
+conditions:
+  has_sophia_c3_quest_started: tag sophia_c3_quest_started
+  has_sophia_c3_quest_completed: tag sophia_c3_quest_completed
+
+  has_code_quest_started: tag code_quest_started
+  has_code_quest_completed: tag code_quest_completed
+
+  has_item_truth_compass: item chapter1.truth_compass:1
+  has_item_credibility_scanner: item chapter1.credibility_scanner:1
+  has_item_emotion_filter: item chapter1.emotion_filter:1
+  has_item_truth_restorer: item chapter2.truth_restorer:1
+
+events:
+  tag_add_sophia_c3_quest_started: tag add sophia_c3_quest_started
+  tag_add_sophia_c3_quest_completed: tag add sophia_c3_quest_completed
+  tag_del_sophia_c3_quest_started: tag del sophia_c3_quest_started
+  tag_del_sophia_c3_quest_completed: tag del sophia_c3_quest_completed
+
+  sophia_c3_quest_start: "folder 
+    tag_add_sophia_c3_quest_started"
+  sophia_c3_quest_end: 
+    "folder 
+    tag_add_sophia_c3_quest_completed,\
+    tag_del_sophia_c3_quest_started,\
+    advancement_sophia_c3_quest_complete"
+
+  # 소피아 퀘스트 알림
+  advancement_sophia_c3_quest_complete: "notify &a소피아 퀘스트 완료\n백신 제조를 위한 재료를 모았습니다! io:advancement"
+
+  # 소피아 퀘스트 보상
+  give_keycard: "command give %player% keycard"
+  sophia_to_alexcode: "command warp %player% 알렉스코드"
+
+  tag_add_code_started: tag add code_started
+  tag_add_code_completed: tag add code_completed
+  tag_del_code_started: tag del code_started
+  tag_del_code_completed: tag del code_completed
+
+  code_quest_start: "folder 
+    tag_add_code_started"
+  code_quest_end: 
+    "folder 
+    tag_add_code_completed,\
+    tag_del_code_started,\
+    take_truth_compass,\
+    take_credibility_scanner,\
+    take_emotion_filter,\
+    take_truth_restorer,\
+    advancement_code_quest_complete"
+  
+  take_truth_compass: "take chapter1.truth_compass"
+  take_credibility_scanner: "take chapter1.credibility_scanner"
+  take_emotion_filter: "take chapter1.emotion_filter"
+  take_truth_restorer: "take chapter2.truth_restorer"
+
+  # 알렉스 코드 퀘스트 알림
+  advancement_code_quest_complete: "notify &a알렉스 코드 퀘스트 완료\n백신 제조를 위한 재료를 모았습니다! io:advancement"
+
+  code_to_control: "command warp %player% 중앙_제어실"

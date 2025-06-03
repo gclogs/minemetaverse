@@ -1,0 +1,49 @@
+conversations:
+  eco:
+    quester: "에코"
+    first: "eco_start,eco_completed"
+    NPC_options:
+      eco_start:
+        text:
+          - "또... 또 누군가 오셨네요. 저는 에코입니다."
+        pointers: player_greeting
+        conditions: "has_rea_quest_started,!has_eco_quest_completed"
+      eco_2:
+        text:
+          - "제 목소리로 만든 가짜 정치 발언 때문에..."
+          - "이제 아무도 제 진짜 목소리를 믿지 않아요."
+        pointers: player_1
+      eco_3:
+        text:
+          - "정말 그렇게 생각하세요?"
+        pointers: player_2
+      eco_4:
+        text:
+          - "감사해요..."
+          - "이걸 가져가세요. 진실한 목소리의 힘이 담긴 &b공명의 조각&r이에요."
+        pointers: player_ok
+      eco_completed:
+        text:
+          - "목소리의 진실은 기술이 아닌 마음에서 나오는 것임을 잊지 마세요."
+        conditions: "has_eco_quest_completed"
+        events: "eco_to_twis"
+
+    player_options:
+      player_greeting:
+        text:
+          - "안녕하세요. 목소리가 많이 상하셨네요."
+        pointers: eco_2
+        events: "eco_quest_start"
+      player_1:
+        text:
+          - "저는 당신의 목소리가 따뜻하다고 생각해요."
+        pointers: eco_3
+      player_2:
+        text:
+          - "네, 진심입니다. 가짜는 기술일 뿐이에요. 진짜 감정은 흉내낼 수 없어요."
+        pointers: eco_4
+      player_ok:
+        text:
+          - "감사합니다. 소중히 간직하겠습니다."
+        events: "eco_quest_end"
+        pointers: eco_completed

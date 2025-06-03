@@ -10,41 +10,47 @@ conversations:
           - "소식을 많이 들었지만 이렇게 가까이 뵙는 것은 처음이네요."
           - "소피아입니다."
         pointers: player_1
+        events: "voice_stop,voice_sophia_0"
         conditions: "!has_sophia_quest_started,!has_sophia_quest_completed"
       sophia_2:
         text: 
           - "슈도스 바이러스가 우리가 예상했던 것보다 훨씬 더 진화했습니다."
           - "단순히 거짓 정보를 만드는 것을 넘어서,"
           - "사람들의 인지 편향을 악용해 진실과 거짓을 구별할 수 없게 만들고 있어요."
+        events: "voice_stop,voice_sophia_3"
         pointers: player_2
       sophia_3:
         text: 
           - "방금 전에도 제주도 바이러스 관련 가짜뉴스가 퍼졌는데,"
           - "벌써 수천 명이 믿고 있어요."
           - "&b코로나보다 심각한 바이러스 발견, 치사율 78%&r라는 헤드라인이었는데..."
+        events: "voice_stop,voice_sophia_4"
         pointers: player_3
       sophia_4:
         text: 
           - "좋은 질문이에요! 바로 그런 의구심이 필요한 거죠."
           - "&7(태블릿을 보여주며)&r 보세요,"
           - "이 태블릿에 실제 &a네메스 &r데이터가 있어요."
+        events: "voice_stop,voice_sophia_7"
         pointers: player_4
       sophia_5:
         text: 
           - "하지만 더 중요한 건, 이런 검증 과정을 스스로 할 수 있는 능력을 기르는 것입니다."
+        events: "voice_stop,voice_sophia_10"
         pointers: player_5
       sophia_6:
         text: 
           - "당신의 알레테이아 칩에는 디지털 백신의 핵심 정보가 들어있어요."
           - "하지만 백신만으로는 부족해요."
           - "사람들이 스스로 생각하는 능력을 되찾아야 합니다."
+        events: "voice_stop,voice_sophia_11"
         pointers: player_6
       sophia_7:
         text: 
           - "첫 번째 임무를 드릴게요."
           - "이 연구소에 남아있는 세 개의 터미널에서 서로 다른 가짜뉴스들을 분석해보세요."
           - "각각 다른 유형의 조작 기법을 사용하고 있어요."
-        events: "sophia_quest_start"
+        events: "voice_stop,voice_sophia_13,sophia_quest_start"
         conditions: "!has_sophia_quest_started"
         pointers: player_ok,player_think
 
@@ -56,6 +62,7 @@ conversations:
           - "&b(1)진실의 나침반, (2)신뢰도 측정기, (3)감정 필터&r가 필요합니다."
           - "행운을 빕니다. 가디언."
         conditions: "has_sophia_quest_started"
+        events: "voice_stop,voice_sophia_14"
       sophia_completed:
         text: 
           - "터미널을 지난 뒤,"

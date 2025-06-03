@@ -1,0 +1,2 @@
+objectives:
+  obj_code_quest_final: "action any any loc:671;89;-544;world conditions:has_item_truth_compass,has_item_credibility_scanner,has_item_emotion_filter,has_item_truth_restorer events:code_quest_end"

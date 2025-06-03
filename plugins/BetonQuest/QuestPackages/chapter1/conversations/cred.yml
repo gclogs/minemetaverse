@@ -8,47 +8,56 @@ conversations:
           - "당신이 소피아 박사님이 말씀하신 가디언인가요?"
           - "정말 반가워요!"
         pointers: player_start,player_no
-        conditions: "!has_cred_quest_started"
+        events: "voice_stop,voice_cred_34"
+        conditions: "has_sophia_quest_started,!has_cred_quest_completed"
       cred_1:
         text:
           - "신뢰도 측정기를 개발하고 있어요!"
           - "정보가 얼마나 믿을 만한지 판별하는 도구죠."
         pointers: player_1
+        events: "voice_stop,voice_cred_35"
         conditions: "has_cred_quest_started"
       cred_2:
         text:
           - "어떤 건 정말 신뢰할 만한 언론사에서 나온 거고,"
           - "어떤 건... 음, 좀 의심스러운 곳에서 나온 거예요."
         pointers: player_2
+        events: "voice_stop,voice_cred_36"
       cred_3:
         text:
           - "사실 저도 예전에는 구별 못했어요."
           - "초등학교 때 정말 큰 실수를 했거든요."
         pointers: player_3
+        events: "voice_stop,voice_cred_37"
       cred_4:
         text:
-          - "'학교에 곰이 나타났다!'는 뉴스를 보고"
+          - "&c\"학교에 곰이 나타났다!\"&r는 뉴스를 보고"
           - "확인도 안 하고 친구들한테 다 퍼뜨렸어요."
           - "그런데 그게 완전 가짜였던 거죠!"
         pointers: player_4
+        events: "voice_stop,voice_cred_38"
       cred_5:
         text:
           - "학교 전체가 난리가 났어요. 학부모들이 몰려오고, 선생님들은 당황하고..."
           - "나중에 가짜라는 걸 알았을 때 정말 죄송했어요."
         pointers: player_5
+        events: "voice_stop,voice_cred_39"
       cred_6:
         text:
           - "그때 깨달았죠. 정보를 퍼뜨리기 전에 반드시 확인해야 한다는 걸!"
         pointers: player_6
+        events: "voice_stop,voice_cred_40"
       cred_7:
         text:
           - "맞아요! 이제는 누구도 저처럼 실수하지 않도록 도와주고 싶어요."
         pointers: player_7
+        events: "voice_stop,voice_cred_41"
       cred_8:
         text:
           - "이 도구로 정보의 출처, 작성자의 전문성, 언론사의 신뢰도를"
           - "종합적으로 분석할 수 있어요."
         pointers: player_8
+        events: "voice_stop,voice_cred_42"
       cred_9:
         text:
           - "예를 들어... 이 기사는 의학 전문 기자가 쓴 거고,"
@@ -60,24 +69,29 @@ conversations:
           - "작성자 정보가 없고, 출처도 명확하지 않아요."
           - "그리고 너무 자극적인 표현만 가득하죠."
         pointers: player_10
+        events: "voice_stop,voice_cred_43"
       cred_11:
         text:
           - "가장 중요한 건 &c누가, 언제, 어디서, 왜&r를 확인하는 거예요!"
         pointers: player_11
+        events: "voice_stop,voice_cred_44"
       cred_12:
         text:
           - "물론이죠! 이거 하나 가져가세요!"
         pointers: player_12
+        events: "voice_stop,voice_cred_45"
       cred_13:
         text:
           - "100% 완벽한 도구는 없어요. 가장 중요한 건"
           - "&c의심하되 비난하지 말고, 확인하되 비웃지 말자&r는 거예요!"
         pointers: player_ok
+        events: "voice_stop,voice_cred_46"
       cred_completed:
         text:
           - "천만에요!"
           - "그리고 혹시 확실하지 않으면 저에게 물어보세요."
           - "함께 확인해볼게요!"
+        events: "voice_stop,voice_cred_47"
         conditions: "has_cred_quest_completed"
 
     player_options:

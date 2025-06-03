@@ -1,86 +1,117 @@
 conversations: 
   rea: 
     quester: "레아" 
-    first: "rea_1,rea_on_progress,rea_completed"
-    NPC_options: 
-      rea_1:
+    first: "is_sophia_quest_completed,rea_start,rea_2,rea_on_progress,rea_completed"
+    NPC_options:
+      is_sophia_quest_completed:
+        text:
+          - "Chapter1. &a소피아 박사&r를 먼저 만나고 오셔야 합니다."
+        conditions: "!chapter1.has_sophia_quest_completed"
+      rea_start:
         text: 
-          - "반갑습니다... 저는 레아에요."
-          - "&a소피아 박사&r님을 통해 전해 들었습니다."
-          - "이곳은 딥페이크 피해자들을 돕는 &b파테리온&r이에요."
-          - "지금 상황은... 심각합니다."
-        pointers: player_1
-        conditions: "chapter1.has_sophia_quest_completed,!has_rea_quest_started,!has_rea_quest_completed"
-
+          - "반갑습니다... 저는 레아예요."
+          - "소피아 박사님을 통해 전해 들었습니다."
+          - "당신이 우리의 마지막 희망이라고요."
+        pointers: player_start,player_no
+        conditions: "!has_rea_quest_started,chapter1.has_sophia_quest_completed"
       rea_2:
         text: 
-          - "딥페이크는 인공지능을 이용해,"
-          - "&c얼굴,목소리&r를 다른 영상에 합성하는 기술이에요."
-          - "원래는 영화나, 그래픽 등의 작업에 도움을 주는 기술이었지만..."
+          - "네, 맞아요. 이곳은 딥페이크 피해자들을 돕는 &b파테리온&r이에요."
+          - "지금 상황은... 아시겠지만 심각합니다."
         pointers: player_2
+        conditions: "!has_rea_quest_started"
       rea_3:
         text: 
-          - "지금은 악용 되어 사람들을 해치는 무기가 되었어요."
-          - "에코의 목소리로 만든 가짜 팟캐스트에요."
-          - "너무 자연스럽죠?"
+          - "미러 봇이 &c얼굴,목소리&r을 &c다른 영상에 합성하는 딥페이크 기술&r을"
+          - "사용하여 피해자들이 속출하고 있어요."
         pointers: player_3
       rea_4:
         text: 
-          - "그게 문제입니다."
-          - "기술이 발전할수록 더욱 구별하기 어려워지고 있어요."
-          - "하지만 몇 가지 단서가 있습니다."
-        pointers: player_4
-        events: ""
-      rea_5:
-        text: 
-          - "맞아요.. 그래서 더 문제입니다."
+          - "원래는 영화, 컴퓨터 그래픽 등의 작업에 도움을 주는 기술이었지만..."
+          - "지금은 악용되어 피해자들을 해치는 무기가 되었어요."
+          - "여기 에코의 목소리로 만든 가짜 팟캐스트 CD에요."
         pointers: player_5
       rea_6:
         text: 
-          - "미러 봇을 정화할 &b진실 복원기&r가 필요합니다."
-          - "&b5개&r만 구해주실 수 있을까요..?"
-          - "&7&o미러 봇을 처치하여 진실 복원기를 얻을 수 있습니다."
-        pointers: player_ok,player_think
-        conditions: "chapter1.has_sophia_quest_completed,!has_rea_quest_started"
-      rea_ok:
+          - "맞아요. 너무 자연스럽죠?"
+          - "기술이 발전할수록 점점 더 구별하기 어려워지고 있어요."
+          - "하지만 아직은 몇 가지 단서가 있어요."
+        pointers: player_6
+      rea_7:
         text: 
-          - "네, 생각이 바뀌면 다시 말을 걸어주세요."
-      
+          - "여기 딥페이크 단서 가이드북입니다."
+        pointers: player_7
+      rea_8:
+        text: 
+          - "맞아요."
+          - "그래서 더 근본적인 해결책이 필요해요."
+          - "바로 진실 복원기죠."
+        pointers: player_8
+      rea_9:
+        text: 
+          - "문제는... 제작에 필요한 핵심 부품들이 흩어져 있다는 거예요."
+          - "세 개의 특별한 조각이 필요해요."
+        pointers: player_9
+      rea_10:
+        text: 
+          - "&b공명의 조각&r은 &a에코&r가,"
+          - "&b형상의 조각&r은 &a트위스&r가,"
+          - "&b정화의 조각&r은 &a버그&r가 가지고 있어요."
+        pointers: player_10
       rea_on_progress:
         text: 
           - "&a퀘스트 진행중.."
           - "&r"
-          - "미러 봇을 정화할 &b진실 복원기&r가 필요합니다."
-          - "&b5개&r만 구해주실 수 있을까요..?"
-          - "&7&o미러 봇을 처치하여 진실 복원기를 얻을 수 있습니다."
-        conditions: "has_rea_quest_started"
+          - "그때 다시 이곳으로 오세요."
+          - "함께 &b진실 복원기&r를 완성할 겁니다."
+          - "조심히 다녀오세요."
+        conditions: "has_rea_quest_started,!has_bug_quest_completed,!has_eco_quest_completed,!has_twis_quest_completed"
       rea_completed:
         text: 
-          - "&a소피아 박사&r님에게 가보세요!"
+          - "다 모아오셨군요, 감사합니다."
+          - "여기 &b진실 복원기&r예요"
+          - "&a소피아 박사&r님에게 돌아가 진실을 알려주세요."
         conditions: "has_rea_quest_completed"
+        events: "rea_to_sophia"
+
+      rea_ok:
+        text: 
+          - "네, 생각이 바뀌면 다시 말을 걸어주세요."
 
     player_options: 
-      player_1:
+      player_start:
         text: 
-          - "딥페이크... 어떻게 도울 수 있을까요?"
+          - "만나서 반갑습니다. 여기가 파테리온인가요?"
         pointers: rea_2
+        events: "rea_quest_start"
+      player_no:
+        text: 
+          - "죄송합니다"
       player_2:
-        text: "다음"
+        text: "얼마나 심각한가요?"
         pointers: rea_3
       player_3:
-        text: "어떻게 구별할 수 있죠?"
+        text: "다음"
         pointers: rea_4
-        events: ""
-      player_4:
-        text: "... 판별하기 어렵겠네요."
-        pointers: rea_5
       player_5:
-        text: "그럼 어떻게 구별할 수 있을까요?"
+        text: "정말 구별하기 어렵네요."
         pointers: rea_6
-      
-      player_ok:
+      player_6:
+        text: "다음"
+        pointers: rea_7
+      player_7:
+        text: "판별하기 쉽지 않겠군요."
+        pointers: rea_8
+      player_8:
+        text: "어떻게 만들 수 있나요?"
+        pointers: rea_9
+      player_9:
+        text: "세 조각을 모두 모아오면 어떻게 하나요?"
+        pointers: rea_10
+      player_10:
         text: "네, 알겠습니다."
         events: "rea_quest_start"
+        pointers: rea_on_progress
       player_think:
         text: "잠시 생각좀.."
         pointers: rea_ok

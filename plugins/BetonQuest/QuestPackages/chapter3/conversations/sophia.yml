@@ -1,0 +1,54 @@
+conversations:
+  sophia:
+    quester: "소피아 박사"
+    first: "sophia_start,sophia_completed"
+    NPC_options:
+      sophia_start:
+        text:
+          - "돌아오셨군요... 정말 많이 성장하셨네요."
+          - "당신의 눈빛이 달라졌어요. 이제 진정한 가디언의 모습이 보입니다."
+        pointers: player_greeting
+        conditions: "!has_sophia_c3_quest_completed"
+      sophia_2:
+        text:
+          - "당신이 모아온 경험과 아이템들... 이것이야말로 진정한 백신의 재료입니다."
+          - "하지만 한 가지 더 필요한 게 있어요."
+        pointers: player_1
+      sophia_3:
+        text:
+          - "슈도스가 우리가 없는 사이에 더욱 진화했습니다."
+          - "이제는 단순한 거짓 정보를 넘어서 현실 자체를 조작하려 하고 있어요."
+          - "시간이 얼마 남지 않았습니다. 백신 제조를 위해서는 연구소 깊숙한 곳에 있는 핵심 장비가 필요해요."
+          - "이 키카드를 가지고 중앙 제어실로 가세요. 거기서 모든 아이템들을 조합하여 최종 백신을 완성할 수 있을 겁니다."
+        pointers: player_2
+      sophia_4:
+        text:
+          - "걱정하지 마세요. 당신은 이미 충분히 준비되었어요."
+          - "그리고... 당신이 혼자가 아니라는 것을 곧 알게 될 겁니다."
+          - "행운을 빕니다, 가디언. 디지털 세상의 평화가 당신의 손에 달려있어요."
+        pointers: player_ok
+      sophia_completed:
+        text:
+          - "디지털 세상의 평화가 당신의 손에 달려있어요, 가디언."
+        conditions: "has_sophia_c3_quest_completed"
+        events: "sophia_to_alexcode"
+
+    player_options:
+      player_greeting:
+        text:
+          - "박사님, 많은 것을 배웠습니다. 이제 백신을 만들 수 있나요?"
+        pointers: sophia_2
+        events: "sophia_c3_quest_start"
+      player_1:
+        text:
+          - "무엇이 더 필요한가요?"
+        pointers: sophia_3
+      player_2:
+        text:
+          - "혼자 가도 괜찮을까요?"
+        pointers: sophia_4
+      player_ok:
+        text:
+          - "알겠습니다."
+        events: "give_keycard"
+        pointers: sophia_completed

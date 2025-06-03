@@ -1,81 +1,91 @@
 conversations:
   vera:
     quester: "베라"
-    first: "vera_start,vera_1,vera_no_skip,vera_completed"
+    first: "vera_start,vera_1,vera_completed"
     NPC_options:
       vera_start:
         text:
           - "어? 누군가 오셨네요. 가디언님이시군요."
         pointers: player_start,player_no
-        conditions: "!has_vera_quest_started"
+        events: "voice_stop,voice_vera_49"
+        conditions: "has_sophia_quest_started,!has_vera_quest_completed"
       vera_1:
         text:
           - "감사해요."
           - "이 공간이 제게는 마음의 안식처예요."
           - "여기서 진실의 나침반을 만들고 있어요."
         pointers: player_1
-        conditions: "!has_vera_quest_started,!has_vera_quest_skipped"
+        events: "voice_stop,voice_vera_50"
+        conditions: "has_sophia_quest_started,!has_vera_quest_completed"
       vera_2:
         text:
           - "네... 진실과 거짓을 구별할 수 있도록 도와주는 도구예요."
         pointers: player_2
-      vera_skip:
-        text:
-          - "사실... 저에게는 특별한 의미가 있는 도구예요."
-        pointers: player_2,player_skip
-      vera_no_skip:
+        events: "voice_stop,voice_vera_52"
+      vera_3_intro:
         text:
           - "사실... 저에게는 특별한 의미가 있는 도구예요."
         pointers: player_3
-        conditions: "has_vera_quest_started,!has_vera_quest_skipped"
+        events: "voice_stop,voice_vera_53"
       vera_3:
         text:
           - "중학교 때... 저는 정말 나쁜 아이였어요."
           - "온라인에서 다른 친구에 대해 거짓말을 퍼뜨렸거든요."
         pointers: player_4
+        events: "voice_stop,voice_vera_54"
       vera_4:
         text:
           - "질투심 때문이었어요. 그 친구가 게임을 너무 잘해서..."
-          - "\"아이템을 훔쳤다\"는 거짓말을 만들어냈어요."
+          - "&c\"아이템을 훔쳤다\"&r는 거짓말을 만들어냈어요."
         pointers: player_5
+        events: "voice_stop,voice_vera_55"
       vera_5:
         text:
           - "그 친구가 왕따를 당했어요."
-          - "아무도 믿어주지 않았고... 결국 전학을 갔어요."
+          - "아무도 믿어주지 않았고..."
+          - "결국 전학을 갔어요."
         pointers: player_6
+        events: "voice_stop,voice_vera_56"
       vera_6:
         text:
           - "전학 가는 날, 그 친구가 우는 모습을 봤을 때..."
           - "제 마음도 찢어질 것 같았어요."
         pointers: player_7
+        events: "voice_stop,voice_vera_57"
       vera_7:
         text:
           - "그날부터 다짐했어요. 다시는 거짓말을 하지 않겠다고."
           - "오직 진실만을 말하겠다고."
         pointers: player_8
+        events: "voice_stop,voice_vera_58"
       vera_8:
         text:
           - "처음엔 정말 어려웠어요."
           - "거짓말이 얼마나 쉽고 편한지 몰랐거든요."
           - "하지만 점점... 진실을 구별하는 능력이 생겼어요."
         pointers: player_9
+        events: "voice_stop,voice_vera_59"
       vera_9:
         text:
           - "진실은... 단순해요. 복잡하지 않고, 일관성이 있어요."
           - "거짓말은 다른 거짓말을 낳고, 점점 복잡해져요."
         pointers: player_10
+        events: "voice_stop,voice_vera_60"
       vera_10:
         text:
           - "이 나침반은 그런 일관성을 찾아줘요."
           - "정보들 사이의 모순점이나 출처의 신빙성을 추적할 수 있어요."
         pointers: player_11
+        events: "voice_stop,voice_vera_61"
       vera_11:
         text:
           - "하나... 가져가실래요? 당신이라면 잘 사용하실 것 같아요."
         pointers: player_ok
+        events: "voice_stop,voice_vera_62"
       vera_completed:
         text:
           - "저처럼... 거짓으로 다른 사람을 상처주는 일은 없기를 바라요."
+        events: "voice_stop,voice_vera_63"
         conditions: "has_vera_quest_completed"
 
     player_options:
@@ -83,7 +93,6 @@ conversations:
         text:
           - "안녕하세요. 여기 분위기가 정말 평화롭네요."
         pointers: vera_1
-        events: "vera_quest_start"
       player_no:
         text:
           - "방해해서 죄송합니다."
@@ -91,15 +100,10 @@ conversations:
         text:
           - "진실의 나침반이요?"
         pointers: vera_2
-      player_skip:
-        text:
-          - "스토리를 넘길래요."
-        events: "vera_quest_end"
-        pointers: vera_completed
       player_2:
         text:
           - "어떤 의미인가요?"
-        pointers: vera_no_skip
+        pointers: vera_3_intro
       player_3:
         text:
           - "다음"
