@@ -1,0 +1,14 @@
+location: world:1138.247:62.000:-309.741
+enabled: true
+display-range: 10
+update-range: 10
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: "<#ANIM:burn:&f,&b&l>터미널(으)로 올라가기</#ANIM>"
+    height: 0.3
+  - content: "&7&o그대로 들어오시면 됩니다."
+    height: 0.6
+  actions: {}

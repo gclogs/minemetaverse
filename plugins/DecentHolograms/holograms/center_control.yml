@@ -1,0 +1,14 @@
+location: world:672.488:90.000:-543.485
+enabled: true
+display-range: 20
+update-range: 20
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: "<#ANIM:burn:&f,&a&l>알레테이아 칩을 주입하세요.</#ANIM>"
+    height: 0.3
+  - content: "&5&l슈도스 바이러스&r&l를 &b&l정화&r&l하세요."
+    height: 0.6
+  actions: {}

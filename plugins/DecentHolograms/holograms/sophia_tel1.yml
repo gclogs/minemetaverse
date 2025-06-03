@@ -1,0 +1,14 @@
+location: world:1142.500:75.000:-330.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: "저를 클릭하면,"
+    height: 0.3
+  - content: "&a&l소피아 박사&r에게로 갈 수 있습니다."
+    height: 0.6
+  actions: {}

@@ -1,0 +1,14 @@
+location: world:1142.500:73.000:-315.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: "<#ANIM:burn:&f,&b&l>소피아 박사에게로 가기</#ANIM>"
+    height: 0.3
+  - content: "&7&o앞으로 쭉 가시면 됩니다."
+    height: 0.6
+  actions: {}
