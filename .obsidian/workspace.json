@@ -20,15 +20,9 @@
               "icon": "lucide-file",
               "title": "메인스토리-퀘스트"
             }
-          }
-        ]
-      },
-      {
-        "id": "caac4d5c2f0be6f3",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "2112431597c1cd3e",
+            "id": "f7397f8d3f56eb40",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -98,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "76f82f40a551dcef",
@@ -114,6 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "메인스토리-퀘스트.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "백링크"
+              "title": "메인스토리-퀘스트 의 백링크"
             }
           },
           {
@@ -182,7 +178,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -202,6 +198,7 @@
   "lastOpenFiles": [
     "메인스토리-최종.md",
     "메인스토리-퀘스트.md",
+    "메인스토리-남자캐릭터-정리.md",
     "퀘스트 시스템.md",
     "메인스토리-초안.md",
     "마인메타버스 프로젝트 기획.md",
