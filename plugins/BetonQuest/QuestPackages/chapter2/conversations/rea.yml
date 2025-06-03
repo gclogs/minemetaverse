@@ -1,7 +1,7 @@
 conversations: 
   rea: 
     quester: "레아" 
-    first: "is_sophia_quest_completed,rea_start,rea_2,rea_on_progress,rea_completed"
+    first: "is_sophia_quest_completed,rea_start,rea_on_progress,rea_completed"
     NPC_options:
       is_sophia_quest_completed:
         text:
@@ -13,51 +13,59 @@ conversations:
           - "소피아 박사님을 통해 전해 들었습니다."
           - "당신이 우리의 마지막 희망이라고요."
         pointers: player_start,player_no
-        conditions: "!has_rea_quest_started,chapter1.has_sophia_quest_completed"
+        events: "voice_stop,voice_rea_64"
+        conditions: "!has_rea_quest_started,!has_rea_quest_completed,chapter1.has_sophia_quest_completed"
       rea_2:
         text: 
           - "네, 맞아요. 이곳은 딥페이크 피해자들을 돕는 &b파테리온&r이에요."
           - "지금 상황은... 아시겠지만 심각합니다."
         pointers: player_2
-        conditions: "!has_rea_quest_started"
+        events: "voice_stop,voice_rea_67"
       rea_3:
         text: 
           - "미러 봇이 &c얼굴,목소리&r을 &c다른 영상에 합성하는 딥페이크 기술&r을"
           - "사용하여 피해자들이 속출하고 있어요."
         pointers: player_3
+        events: "voice_stop"
       rea_4:
         text: 
           - "원래는 영화, 컴퓨터 그래픽 등의 작업에 도움을 주는 기술이었지만..."
           - "지금은 악용되어 피해자들을 해치는 무기가 되었어요."
           - "여기 에코의 목소리로 만든 가짜 팟캐스트 CD에요."
         pointers: player_5
+        events: "voice_stop,voice_rea_70"
       rea_6:
         text: 
           - "맞아요. 너무 자연스럽죠?"
           - "기술이 발전할수록 점점 더 구별하기 어려워지고 있어요."
           - "하지만 아직은 몇 가지 단서가 있어요."
         pointers: player_6
+        events: "voice_stop,voice_rea_72"
       rea_7:
         text: 
           - "여기 딥페이크 단서 가이드북입니다."
         pointers: player_7
+        events: "voice_stop,voice_rea_74"
       rea_8:
         text: 
           - "맞아요."
           - "그래서 더 근본적인 해결책이 필요해요."
           - "바로 진실 복원기죠."
         pointers: player_8
+        events: "voice_stop,voice_rea_75"
       rea_9:
         text: 
           - "문제는... 제작에 필요한 핵심 부품들이 흩어져 있다는 거예요."
           - "세 개의 특별한 조각이 필요해요."
         pointers: player_9
+        events: "voice_stop,voice_rea_76"
       rea_10:
         text: 
           - "&b공명의 조각&r은 &a에코&r가,"
           - "&b형상의 조각&r은 &a트위스&r가,"
           - "&b정화의 조각&r은 &a버그&r가 가지고 있어요."
         pointers: player_10
+        events: "voice_stop,voice_rea_78"
       rea_on_progress:
         text: 
           - "&a퀘스트 진행중.."
@@ -65,14 +73,18 @@ conversations:
           - "그때 다시 이곳으로 오세요."
           - "함께 &b진실 복원기&r를 완성할 겁니다."
           - "조심히 다녀오세요."
+        events: "voice_stop,voice_rea_79"
         conditions: "has_rea_quest_started,!has_bug_quest_completed,!has_eco_quest_completed,!has_twis_quest_completed"
       rea_completed:
         text: 
           - "다 모아오셨군요, 감사합니다."
           - "여기 &b진실 복원기&r예요"
+          - ""
+          - "&b네메스 탑&r에 있는"
           - "&a소피아 박사&r님에게 돌아가 진실을 알려주세요."
-        conditions: "has_rea_quest_completed"
-        events: "rea_to_sophia"
+        conditions: "has_bug_quest_completed,has_eco_quest_completed,has_twis_quest_completed"
+        events: "voice_stop,voice_rea_96,rea_quest_end"
+        pointers: player_ok
 
       rea_ok:
         text: 
@@ -83,7 +95,6 @@ conversations:
         text: 
           - "만나서 반갑습니다. 여기가 파테리온인가요?"
         pointers: rea_2
-        events: "rea_quest_start"
       player_no:
         text: 
           - "죄송합니다"
@@ -112,6 +123,9 @@ conversations:
         text: "네, 알겠습니다."
         events: "rea_quest_start"
         pointers: rea_on_progress
+      player_ok:
+        text: "감사합니다."
+        events: "rea_to_sophia"
       player_think:
         text: "잠시 생각좀.."
         pointers: rea_ok

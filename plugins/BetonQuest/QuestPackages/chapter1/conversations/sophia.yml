@@ -1,7 +1,7 @@
 conversations: 
   sophia: 
     quester: "소피아 박사" 
-    first: "sophia_1,sophia_on_progress,sophia_completed"
+    first: "sophia_1,sophia_done,sophia_on_progress,sophia_completed"
     NPC_options: 
       sophia_1:
         text: 
@@ -63,11 +63,20 @@ conversations:
           - "행운을 빕니다. 가디언."
         conditions: "has_sophia_quest_started"
         events: "voice_stop,voice_sophia_14"
+      sophia_done:
+        text:
+          - "다 모아오셨군요, 가디언."
+          - "&b파테리온&r으로 가는 길을 열어드릴게요."
+          - "&a레아&r에게 도움을 요청하세요."
+        conditions: "!has_sophia_quest_completed,has_phil_quest_completed,has_vera_quest_completed,has_cred_quest_completed"
+        events: "sophia_quest_end,teleport_to_paterion"
       sophia_completed:
         text: 
-          - "터미널을 지난 뒤,"
-          - "이곳을 빠져나가 &a레아&r에게 도움을 요청하세요."
+          - "행운을 빕니다. 가디언."
+          - "&b파테리온&r으로 가는 길을 열어드릴게요."
+          - "&a레아&r에게 도움을 요청하세요."
         conditions: "has_sophia_quest_completed"
+        events: "voice_stop,voice_sophia_14,teleport_to_paterion"
 
     player_options:
       player_1: 

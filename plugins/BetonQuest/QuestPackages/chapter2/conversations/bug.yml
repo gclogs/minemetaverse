@@ -7,21 +7,25 @@ conversations:
         text:
           - "찾으시는 게 있을까요..?"
         pointers: player_greeting
+        events: "voice_stop,voice_bug_91"
         conditions: "has_rea_quest_started,!has_bug_quest_completed"
       bug_2:
         text:
-          - "제가 만든 기술이... 무고한 사람들에게 피해를 줬었어요."
+          - "제가 만든 기술이... 무고한 사람들에게 피해를 줬어요."
           - "그래서.. 레아를 도와 딥페이크 피해자들을 도와주고 있어요.."
         pointers: player_1
+        events: "voice_stop,voice_bug_92"
       bug_3:
         text:
-          - "정화의 조각을 찾으러 오신거죠?"
+          - "&b정화의 조각&r을 찾으러 오신거죠?"
         pointers: player_2
+        events: "voice_stop,voice_bug_94"
       bug_4:
         text:
           - "다시는 딥페이크 기술이 악용되지 않도록 힘써주세요."
           - "이 &b정화의 조각&r이 당신을 도울 거예요."
         pointers: player_ok
+        events: "voice_stop,voice_bug_95"
       bug_completed:
         text:
           - "기술이 사람을 위한 것이 되길 바랍니다."

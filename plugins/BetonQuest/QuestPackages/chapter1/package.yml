@@ -96,6 +96,8 @@ events:
   take_truth_compass: take truth_compass 1
   take_credibility_scanner: take credibility_scanner 1
   take_emotion_filter: take emotion_filter 1
+
+  teleport_to_paterion: "command warp %player% 파테리온"
   
   #################################################
   # 챕터1-서브 퀘스트: 필 (PHIL)

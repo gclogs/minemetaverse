@@ -5,41 +5,64 @@ conversations:
     NPC_options:
       code_start:
         text:
-          - "소피아 박사에게서 들었습니다. 당신이 마지막 남은 가디언이라고요."
-          - "드디어... 우리에게도 희망이 보이는군요."
-        pointers: player_materials
-        conditions: "!has_code_quest_started"
-      code_materials:
+          - "소피아 박사에게서 들었습니다."
+          - "당신이 마지막 남은 가디언이라고요."
+        pointers: player_1
+        conditions: "!has_code_quest_completed,has_sophia_c3_quest_completed"
+      code_1:
         text:
           - "훌륭합니다. 먼저 중앙 제조대에 모아온 아이템들을 설치해주세요."
-          - "진실의 나침반, 신뢰도 측정기, 감정 필터... 모든 것이 필요합니다."
-          - "그 다음, 이 연결 장치를 통해 당신의 알레테이아 칩과 제조 시스템을 동기화해야 합니다."
-          - "칩 안의 모든 경험과 학습 데이터가 백신의 핵심이 될 것입니다."
-        pointers: player_danger
-      code_danger:
+          - "&b진실의 나침반, 신뢰도 측정기, 감정 필터...&r모든 것이 필요합니다."
+        pointers: player_2
+      code_2:
         text:
-          - "약간의 위험은 있습니다. 하지만 이것이 슈도스를 완전히 정화할 수 있는 유일한 방법이에요."
-          - "백신이 완성되면, 그것을 슈도스의 핵심 서버에 직접 주입해야 합니다."
+          - "그 다음, 이 연결 장치를 통해 당신의 알레테이아 칩과"
+          - "제조 시스템을 동기화해야 합니다."
+          - "칩 안의 모든 경험과 학습 데이터가 백신의 핵심이 될 것입니다."
+        pointers: player_3
+      code_3:
+        text:
+          - "약간의 위험은 있습니다."
+          - "하지만 이것이 &d&l슈도스&r를 완전히 정화할 수 있는 유일한 방법이에요."
+          - "백신이 완성되면, 그것을 &d&l슈도스&r의 핵심 서버에 직접 주입해야 합니다."
+        pointers: player_4
+      code_4:
+        text:
           - "기억하세요. 우리의 목표는 파괴가 아닌 정화입니다."
-          - "슈도스도 결국 잘못 학습된 AI일 뿐이니까요."
-        pointers: player_understand
+          - "&d&l슈도스&r도 결국 잘못 학습된 AI일 뿐이니까요."
+        pointers: player_ok,player_no
       code_completed:
         text:
-          - "정화의 시간이 왔습니다. 가디언, 당신의 손에 디지털 세상의 미래가 달려있습니다."
+          - "정화의 시간이 왔습니다. 가디언,"
+          - "당신의 손에 세상의 미래가 달려있습니다."
         conditions: "has_code_quest_completed"
-        events: "code_to_control"
+        events: "code_to_control,cmd_night"
 
     player_options:
-      player_materials:
+      player_1:
         text:
-          - "재료들은 모두 모아왔습니다. 이제 무엇을 해야 하나요?"
-        pointers: code_materials
+          - "재료들은 모두 모아왔습니다."
+          - "이제 무엇을 해야 하나요?"
+        pointers: code_1
         events: "code_quest_start"
-      player_danger:
+      player_2:
         text:
           - "위험하지는 않나요?"
-        pointers: code_danger
-      player_understand:
+        pointers: code_2
+      player_3:
+        text:
+          - "다음"
+        pointers: code_3
+      player_4:
+        text:
+          - "다음"
+        pointers: code_4
+      player_ok:
         text:
           - "감사합니다. 다녀오겠습니다."
+        pointers: code_completed
+        events: "code_quest_end"
+      player_no:
+        text:
+          - "그런 일은 할 수 없네요."
         pointers: code_completed

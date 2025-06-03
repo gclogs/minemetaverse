@@ -7,21 +7,26 @@ conversations:
         text:
           - "또... 또 누군가 오셨네요. 저는 에코입니다."
         pointers: player_greeting
+        events: "voice_stop,voice_eco_81"
         conditions: "has_rea_quest_started,!has_eco_quest_completed"
       eco_2:
         text:
           - "제 목소리로 만든 가짜 정치 발언 때문에..."
           - "이제 아무도 제 진짜 목소리를 믿지 않아요."
         pointers: player_1
+        events: "voice_stop,voice_eco_82"
       eco_3:
         text:
           - "정말 그렇게 생각하세요?"
         pointers: player_2
+        events: "voice_stop,voice_eco_83"
       eco_4:
         text:
           - "감사해요..."
-          - "이걸 가져가세요. 진실한 목소리의 힘이 담긴 &b공명의 조각&r이에요."
+          - "이걸 가져가세요."
+          - "진실한 목소리의 힘이 담긴 &b공명의 조각&r이에요."
         pointers: player_ok
+        events: "voice_stop,voice_eco_84"
       eco_completed:
         text:
           - "목소리의 진실은 기술이 아닌 마음에서 나오는 것임을 잊지 마세요."

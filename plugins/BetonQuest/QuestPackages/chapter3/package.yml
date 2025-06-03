@@ -3,7 +3,7 @@ package:
 
 npcs:
   sophia: FancyNpcs ee79f1b8-73b5-42aa-a159-03de8d1bf36d
-  code: FancyNpcs 62655b67-616b-462f-952d-626224b3235b
+  code: FancyNpcs f26779d3-1a06-4a56-a0c3-06df0bb44dd5
 
 npc_conversations:
   sophia: "sophia"
@@ -22,6 +22,12 @@ conditions:
   has_item_truth_restorer: item chapter2.truth_restorer:1
 
 events:
+  chapter3_drop: "folder 
+    tag_del_sophia_c3_quest_started,\
+    tag_del_sophia_c3_quest_completed,\
+    tag_del_code_quest_started,\
+    tag_del_code_quest_completed"
+    
   tag_add_sophia_c3_quest_started: tag add sophia_c3_quest_started
   tag_add_sophia_c3_quest_completed: tag add sophia_c3_quest_completed
   tag_del_sophia_c3_quest_started: tag del sophia_c3_quest_started
@@ -42,17 +48,17 @@ events:
   give_keycard: "command give %player% keycard"
   sophia_to_alexcode: "command warp %player% 알렉스코드"
 
-  tag_add_code_started: tag add code_started
-  tag_add_code_completed: tag add code_completed
-  tag_del_code_started: tag del code_started
-  tag_del_code_completed: tag del code_completed
+  tag_add_code_quest_started: tag add code_quest_started
+  tag_add_code_quest_completed: tag add code_quest_completed
+  tag_del_code_quest_started: tag del code_quest_started
+  tag_del_code_quest_completed: tag del code_quest_completed
 
   code_quest_start: "folder 
-    tag_add_code_started"
+    tag_add_code_quest_started"
   code_quest_end: 
     "folder 
-    tag_add_code_completed,\
-    tag_del_code_started,\
+    tag_add_code_quest_completed,\
+    tag_del_code_quest_started,\
     take_truth_compass,\
     take_credibility_scanner,\
     take_emotion_filter,\
@@ -67,4 +73,29 @@ events:
   # 알렉스 코드 퀘스트 알림
   advancement_code_quest_complete: "notify &a알렉스 코드 퀘스트 완료\n백신 제조를 위한 재료를 모았습니다! io:advancement"
 
-  code_to_control: "command warp %player% 중앙_제어실"
+  code_to_control: "command warp %player% 중앙제어실"
+  cmd_night: "command time night world"
+
+  #################################################
+  # 챕터3-목소리
+  #################################################
+  voice_stop: "command stopsound %player%"
+  voice_sophia_64: "command iaplaysound metaverse:voice.sophia.audio_64 %player% 1 1.1"
+  voice_sophia_67: "command iaplaysound metaverse:voice.sophia.audio_67 %player% 1 1.1"
+  voice_sophia_70: "command iaplaysound metaverse:voice.sophia.audio_70 %player% 1 1.1"
+  
+  # c3_sophia 음성 명령어
+  voice_c3_sophia_99: "command iaplaysound metaverse:voice.c3_sophia.audio_99 %player% 1 1.1"
+  voice_c3_sophia_101: "command iaplaysound metaverse:voice.c3_sophia.audio_101 %player% 1 1.1"
+  voice_c3_sophia_104: "command iaplaysound metaverse:voice.c3_sophia.audio_104 %player% 1 1.1"
+  voice_c3_sophia_106: "command iaplaysound metaverse:voice.c3_sophia.audio_106 %player% 1 1.1"
+  voice_c3_sophia_108: "command iaplaysound metaverse:voice.c3_sophia.audio_108 %player% 1 1.1"
+  voice_c3_sophia_110: "command iaplaysound metaverse:voice.c3_sophia.audio_110 %player% 1 1.1"
+  voice_c3_sophia_111: "command iaplaysound metaverse:voice.c3_sophia.audio_111 %player% 1 1.1"
+  
+  # code 음성 명령어
+  voice_code_112: "command iaplaysound metaverse:voice.code.audio_112 %player% 1 1.05"
+  voice_code_114: "command iaplaysound metaverse:voice.code.audio_114 %player% 1 1.05"
+  voice_code_116: "command iaplaysound metaverse:voice.code.audio_116 %player% 1 1.05"
+  voice_code_118: "command iaplaysound metaverse:voice.code.audio_118 %player% 1 1.05"
+  voice_code_121: "command iaplaysound metaverse:voice.code.audio_121 %player% 1 1.05"

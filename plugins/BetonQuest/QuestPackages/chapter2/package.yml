@@ -178,3 +178,36 @@ events:
   take_form_fragment: take form_fragment 1
   take_purification_fragment: take purification_fragment 1
   take_all_fragments: folder take_resonance_fragment,take_form_fragment,take_purification_fragment
+
+  #################################################
+  # 챕터2-목소리
+  #################################################
+  voice_stop: "command stopsound %player%"
+  voice_rea_64: "command iaplaysound metaverse:voice.rea.audio_64 %player% 1 1.1"
+  voice_rea_67: "command iaplaysound metaverse:voice.rea.audio_67 %player% 1 1.1"
+  voice_rea_70: "command iaplaysound metaverse:voice.rea.audio_70 %player% 1 1.1"
+  voice_rea_72: "command iaplaysound metaverse:voice.rea.audio_72 %player% 1 1.1"
+  voice_rea_74: "command iaplaysound metaverse:voice.rea.audio_74 %player% 1 1.1"
+  voice_rea_75: "command iaplaysound metaverse:voice.rea.audio_75 %player% 1 1.1"
+  voice_rea_76: "command iaplaysound metaverse:voice.rea.audio_76 %player% 1 1.1"
+  voice_rea_78: "command iaplaysound metaverse:voice.rea.audio_78 %player% 1 1.1"
+  voice_rea_79: "command iaplaysound metaverse:voice.rea.audio_79 %player% 1 1.1"
+  voice_rea_96: "command iaplaysound metaverse:voice.rea.audio_96 %player% 1 1.1"
+  
+  # Eco 음성 명령어
+  voice_eco_81: "command iaplaysound metaverse:voice.eco.audio_81 %player% 1 0.9"
+  voice_eco_82: "command iaplaysound metaverse:voice.eco.audio_82 %player% 1 0.9"
+  voice_eco_83: "command iaplaysound metaverse:voice.eco.audio_83 %player% 1 0.9"
+  voice_eco_84: "command iaplaysound metaverse:voice.eco.audio_84 %player% 1 0.9"
+  
+  # Twis 음성 명령어
+  voice_twis_86: "command iaplaysound metaverse:voice.twis.audio_86 %player% 1 1.1"
+  voice_twis_87: "command iaplaysound metaverse:voice.twis.audio_87 %player% 1 1.1"
+  voice_twis_89: "command iaplaysound metaverse:voice.twis.audio_89 %player% 1 1.1"
+  voice_twis_90: "command iaplaysound metaverse:voice.twis.audio_90 %player% 1 1.1"
+  
+  # Bug 음성 명령어
+  voice_bug_91: "command iaplaysound metaverse:voice.bug.audio_91 %player% 1 1.05"
+  voice_bug_92: "command iaplaysound metaverse:voice.bug.audio_92 %player% 1 1.05"
+  voice_bug_94: "command iaplaysound metaverse:voice.bug.audio_94 %player% 1 1.05"
+  voice_bug_95: "command iaplaysound metaverse:voice.bug.audio_95 %player% 1 1.05"
