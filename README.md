@@ -73,8 +73,8 @@
 ![202120013-남경찬-마인메타버스-AI와딥페이크에경각심가지기-플레이영상 mp4_20250605_030026 981](https://github.com/user-attachments/assets/2127921d-6063-4582-9a93-bbbc39e55e45)
 ![202120013-남경찬-마인메타버스-AI와딥페이크에경각심가지기-플레이영상 mp4_20250605_030103 817](https://github.com/user-attachments/assets/bfb0e868-2227-4815-8d17-766d1395c94c)
 ![202120013-남경찬-마인메타버스-AI와딥페이크에경각심가지기-플레이영상 mp4_20250605_030041 632](https://github.com/user-attachments/assets/d2ca7845-6ec0-45ed-9c68-eaf015a53f3b)
-![202120013-남경찬-마인메타버스-AI와딥페이크에경각심가지기-플레이영상 mp4_20250605_030129 849](https://github.com/user-attachments/assets/e1c594df-b3ef-453f-9c24-2b253d29d3e9)
 ![202120013-남경찬-마인메타버스-AI와딥페이크에경각심가지기-플레이영상 mp4_20250605_030120 824](https://github.com/user-attachments/assets/1a238514-6e88-4318-ad58-38bee7adb0e1)
+![202120013-남경찬-마인메타버스-AI와딥페이크에경각심가지기-플레이영상 mp4_20250605_030129 849](https://github.com/user-attachments/assets/e1c594df-b3ef-453f-9c24-2b253d29d3e9)
 
 ## 기술 스택
 
