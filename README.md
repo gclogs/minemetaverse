@@ -76,16 +76,6 @@
 ![202120013-남경찬-마인메타버스-AI와딥페이크에경각심가지기-플레이영상 mp4_20250605_030120 824](https://github.com/user-attachments/assets/1a238514-6e88-4318-ad58-38bee7adb0e1)
 ![202120013-남경찬-마인메타버스-AI와딥페이크에경각심가지기-플레이영상 mp4_20250605_030129 849](https://github.com/user-attachments/assets/e1c594df-b3ef-453f-9c24-2b253d29d3e9)
 
-## 기술 스택
-
-## 시스템 아키텍처
-
-## 모니터링
-
-## 데이터베이스 ERD
-
-## AI 에이전트로 트래픽 분석
-
 ## Who made?
 
 <table width="500px">
