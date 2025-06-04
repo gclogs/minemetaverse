@@ -1,5 +1,6 @@
+
 <br>
-<img src="https://minecraftbuildinginc.com/wp-content/uploads/2020/11/minecraft-modern-city-1024x506.png" width="500" alt="마인메타버스 이미지">
+![METAVERSE-2025-6-5-](https://github.com/user-attachments/assets/0a764712-1bae-4903-a31a-c0c0e289d385)
 <br>
 
 ---
