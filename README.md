@@ -1,7 +1,5 @@
 
-<br>
-![METAVERSE-2025-6-5-](https://github.com/user-attachments/assets/0a764712-1bae-4903-a31a-c0c0e289d385)
-<br>
+![METAVERSE-2025-6-5-](https://github.com/user-attachments/assets/92eb8447-04f0-401c-858f-e42d8b2c8ac5)
 
 ---
 
