@@ -1,5 +1,5 @@
 
-![METAVERSE-2025-6-5-](https://github.com/user-attachments/assets/92eb8447-04f0-401c-858f-e42d8b2c8ac5)
+![minecraft_title](https://github.com/user-attachments/assets/a4a991a8-04a2-4e6d-b028-ef4515df875e)
 
 ---
 
