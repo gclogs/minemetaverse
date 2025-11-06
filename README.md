@@ -82,7 +82,7 @@
     </thead>
     <tr>
         <th>Picture</th>
-        <td align="center"><img src="https://avatars.githubusercontent.com/u/119719994?v=4" width="60" height="60" alt="개발자1"></td>
+        <td align="center"><img src="" width="60" height="60" alt="개발자1"></td>
     </tr>
     <tr>
         <th>Name</th>
